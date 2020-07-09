@@ -13,7 +13,7 @@ namespace PIGUE.Controllers
     [ApiController]
     public class PlayController : ControllerBase
     {
-        PlayRepositiory _playRepository = new PlayRepositiory();
+        PlayRepository _playRepository = new PlayRepository();
 
         /*GET ALL PLAYS*/
         [HttpGet]
@@ -30,8 +30,5 @@ namespace PIGUE.Controllers
             var playAdded = _playRepository.AddNewPlay(playToAdd);
             return Created("", playAdded);
         }
-
-
-
     }
 }
