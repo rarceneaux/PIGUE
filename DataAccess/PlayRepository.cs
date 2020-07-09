@@ -10,7 +10,7 @@ using System.Data.Common;
 
 namespace PIGUE.DataAccess
 {
-    public class PlayRepositiory
+    public class PlayRepository
     {
         const string ConnectionString = "Server=localhost;Database=Pigue;Trusted_Connection=True;";
         //GET ALL PLAYS
