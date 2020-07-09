@@ -21,5 +21,17 @@ namespace PIGUE.DataAccess
                 return db.Query<Play>("select * from play");
             }
         }
+        public Play AddNewPlay(Play play)
+        {
+            var sql = @"insert into Play(Name,Type,FormationId)
+                output inserted.*
+                 values(@Name,@Type,@FormationId)";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var result = db.QueryFirstOrDefault<Play>(sql, play);
+                return result;
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace PIGUE.Controllers
     {
         PlayRepositiory _playRepository = new PlayRepositiory();
 
+        /*GET ALL PLAYS*/
         [HttpGet]
         public IActionResult GetAllPlays()
         {
@@ -22,6 +23,13 @@ namespace PIGUE.Controllers
             return Ok(allPlays);
         }
 
+        /*ADD NEW PLAY*/
+        [HttpPost]
+        public IActionResult AddNewPlay(Play playToAdd)
+        {
+            var playAdded = _playRepository.AddNewPlay(playToAdd);
+            return Created("", playAdded);
+        }
 
 
 
