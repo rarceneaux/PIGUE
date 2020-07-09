@@ -18,12 +18,12 @@ namespace PIGUE.DataAccess
         {
             using (var db = new SqlConnection(ConnectionString))
             {
-                return db.Query<Play>("select * from play");
+                return db.Query<Play>("select * from plays");
             }
         }
         public Play AddNewPlay(Play play)
         {
-            var sql = @"insert into Play(Name,Type,FormationId)
+            var sql = @"insert into Plays(Name,Type,FormationId)
                 output inserted.*
                  values(@Name,@Type,@FormationId)";
 
