@@ -9,4 +9,4 @@ const getAllPlays = () =>  new Promise((resolve, reject) => {
     });
 
 
-export default {getAllPlays};
+export { getAllPlays };

@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import Home from '../components/pages/Home/Home';
+import Playbook from '../components/pages/Playbook/Playbook';
 import Navbar from '../components/shared/Navbar/Navbar';
 import './App.scss';
 
@@ -21,6 +22,7 @@ class App extends React.Component {
       <Home/>
         <Switch>
         <PublicRoute path="/" exact component={Home}/>
+        <PublicRoute path="/playbook" exact component={Playbook} />
         </Switch>
       </Router>
     </div>
@@ -28,4 +30,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export  {App};
