@@ -1,8 +1,10 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
-import {Home} from '../components/pages/Home/Home';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {Huddle} from '../components/pages/Huddle/Huddle';
 import {Playbook} from '../components/pages/Playbook/Playbook';
 import {Navbar} from '../components/shared/Navbar/Navbar';
+import {Roster} from '../components/pages/Roster/Roster';
+
 import './App.scss';
 
 
@@ -16,9 +18,11 @@ class App extends React.Component {
     <div className="App">
       <Router>
       <Navbar/>
+
         <Switch>
-        <Route path="/Home" exact component={Home}/>
+        <Route path="/" exact component={Huddle}/>
         <Route path="/playbook" exact component={Playbook} />
+        <Route path="/roster" exact component={Roster} />
         </Switch>
       </Router>
     </div>
