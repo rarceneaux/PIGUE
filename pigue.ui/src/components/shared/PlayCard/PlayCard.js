@@ -16,10 +16,12 @@ class PlayCard extends React.Component {
           <div className="PlayCard">
             <div className="card-body text-center">
             <h1 className="card-title">{play.name}</h1>
+            <h1 className="card-title">{play.id}</h1>
+
       </div>
     </div>
         );
       }
 }
 
-export default PlayCard;
+export {PlayCard};

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PlayCard from '../../shared/PlayCard/PlayCard';
+import {PlayCard} from '../../shared/PlayCard/PlayCard';
 import {getAllPlays} from '../../../helpers/data/playData';
 
 
@@ -24,4 +24,4 @@ componentDidMount() {
     }
 }
 
-export default { Playbook };
+export { Playbook };
