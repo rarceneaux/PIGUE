@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import playShape from '../../../helpers/propz/playShape';
 import './PlayCard';
 
@@ -7,7 +7,7 @@ import './PlayCard';
 
 class PlayCard extends React.Component {
     static propTypes = {
-        play: PropTypes.arrayOf(playShape.playShape),
+        play: playShape,
     }
 
     render() {

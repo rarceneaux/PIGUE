@@ -7,4 +7,4 @@ const playerShape = PropTypes.shape({
   imgUrl: PropTypes.string,
 });
 
-export default { playerShape };
+export { playerShape };
