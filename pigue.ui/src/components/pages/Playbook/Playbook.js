@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {PlayCard} from '../../shared/PlayCard/PlayCard';
 import {getAllPlays} from '../../../helpers/data/playData';
+import './Playbook.scss';
 
 
 class Playbook extends Component {
