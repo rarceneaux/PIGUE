@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PIGUE.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+
 
 namespace PIGUE
 {
@@ -26,6 +28,17 @@ namespace PIGUE
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddCors(options =>
+              options.AddPolicy("GameTime",
+                  builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin())
+          );
+            services.AddTransient<PlayRepository>();
+            services.AddTransient<FormationRepository>();
+
+
+      services.AddSingleton<IConfiguration>(Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +52,9 @@ namespace PIGUE
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("GameTime");
+
 
             app.UseAuthorization();
 
