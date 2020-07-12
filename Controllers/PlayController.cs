@@ -9,7 +9,7 @@ using PIGUE.Models;
 
 namespace PIGUE.Controllers
 {
-    [Route("api/plays")]
+    [Route("api/playbook")]
     [ApiController]
     public class PlayController : ControllerBase
     {
