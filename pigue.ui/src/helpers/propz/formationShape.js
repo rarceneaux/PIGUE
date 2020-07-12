@@ -6,4 +6,4 @@ const formationShape = PropTypes.shape({
   imgUrl: PropTypes.string,
 });
 
-export { formationShape };
+export default { formationShape };
