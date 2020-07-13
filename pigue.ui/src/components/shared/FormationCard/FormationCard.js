@@ -1,6 +1,6 @@
 import React from 'react';
 import formationShape from '../../../helpers/propz/formationShape';
-import './FormationCard';
+import './FormationCard.scss';
 
 
 

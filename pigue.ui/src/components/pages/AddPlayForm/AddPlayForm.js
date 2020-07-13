@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import playData from '../../../helpers/data/playData';
+import  {getAllPlays, addNewPlay} from '../../../helpers/data/playData';
 
 import './AddPlayForm.scss';
 
@@ -16,7 +16,7 @@ class AddPlayForm extends React.Component {
     componentDidMount() {
         const { playId } = this.props.match.params;
         if (playId) {
-          playData.getAllPlays(playId)
+          getAllPlays((playId))
             .then((response) => {
               const play = response.data;
               this.setState({ Name: play.Name, Type: play.Type, FormationId: play.FormationId });
@@ -39,40 +39,35 @@ class AddPlayForm extends React.Component {
         e.preventDefault();
         this.setState({ FormationId: e.target.value})
 
-
+    }
 
     savePlayAEvent = (e) => {
         e.preventDefault();
         const newPlay = {
-          Name: this.state.Name,
-          Type: this.state.Run,
-          FormationId: this.state.FormationId,
+          name: this.state.Name,
+          type: this.state.Type,
+          formationId: this.state.FormationId,
         };
-        playData.addNewPlay(newPlay)
-          .then(() => this.props.history.push('/playbook'))
-          .catch((err) => console.error('err', err));
+        addNewPlay((newPlay))
       };
 
       render() {
-        const {
-        Name,
-        Type,
-        FormationId,
-        } = this.state;
-        const { playId } = this.props.match.params;
+        const 
+        { Name, 
+          Type, 
+          FormationId } = this.state;
         return (
-            <div className="EventForm">
+            <div className="PlayForm">
             <form className="play-details">
           <div className="form-group">
-            <label htmlFor="event-title"><h3>Name of Play</h3></label>
+            <label htmlFor="play-title"><h3>Name of Play</h3></label>
             <input
             type="text"
             className="form-control"
             id="play-name"
             placeholder="Enter Play "
             value={Name}
-            onChange={this.nameChange}
-            />
+            onChange={this.nameChange}/>
           </div>
           <div className="form-group">
             <label htmlFor="play-type"><h3>Type of Play</h3></label>
@@ -80,56 +75,31 @@ class AddPlayForm extends React.Component {
             type="text"
             className="form-control"
             id="play-type"
-            placeholder="RUN or  PASS"
+            placeholder="RUN or PASS"
             value={Type}
             onChange={this.typeChange}
             />
           </div>
-          <div className="input-group mb-3">
-            <label htmlFor="employeeName">Wa: </label>
-            <select
-              className="form-control"
-              id="employeeName"
-              value={ employeeName }
-              onChange={this.handleEmployeeChange}>
-              <option defaultValue>Choose One...</option>
-              {
-              employees.map((employee) => (
-                (<option key={employee.id} value={employee.id}>{employee.firstName} {employee.lastName}</option>)))
-              }
-            </select>
-          </div>
+          <div className="form-group">
+            <label htmlFor="formation-id"><h3>FormationId</h3></label>
+            <input
+            type="text"
+            className="form-control"
+            id="formation-name"
+            placeholder="Formation"
+            value={FormationId}
+            onChange={this.formationIdChange}
             />
           </div>
-          { eventId
-            ? <button className="btn btn-dark" disabled={isUploading} onClick={this.editEventAEvent}>Save Dash</button>
-            : <button className="btn btn-dark" disabled={isUploading} onClick={this.saveEventAEvent}>Save Dash</button>
-          }
-          <Link className="btn btn-dark cancel" to={'/'}>Cancel</Link>
+          <button className="btn btn-dark" onClick={this.savePlayAEvent}>Save Play</button>
+          <Link className="btn btn-dark cancel" to={'/huddle'}>Cancel</Link>
+
          </form>
          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        );
-            
-    
-    }
+         );
+      }
+}
+       
   
 
-}
-
-
-
-
-export { AddPlayForm };
+export  { AddPlayForm };

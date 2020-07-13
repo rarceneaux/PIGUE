@@ -8,8 +8,12 @@ const getAllPlays = () =>  new Promise((resolve, reject) => {
     .catch(error => reject(error));
     });
 
+const addNewPlay = (newPlay) => {
+    console.log(newPlay);
+    axios.post("https://localhost:44307/api/playbook", newPlay)
+        //     .then(() => this.props.history.push('playbook'))
+        // .catch((err) => console.error('err', err));;
+}
 
-    
 
-
-export { getAllPlays };
+export { getAllPlays, addNewPlay };
