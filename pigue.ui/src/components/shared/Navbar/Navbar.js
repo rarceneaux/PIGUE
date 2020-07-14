@@ -13,7 +13,6 @@ class Navbar extends React.Component {
                 <Link className="nav-item nav-link" to="/">Sideline</Link>
                 <Link className="nav-item nav-link" to="/huddle">Huddle</Link>
                 <Link className="nav-item nav-link" to="/playbook">Playbook</Link>
-                <Link className="nav-item nav-link" to="/formations">Formations</Link>
                 <Link className="nav-item nav-link" to="/roster">Roster</Link>
             </nav>
             </div>

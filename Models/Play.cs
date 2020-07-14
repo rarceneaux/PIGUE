@@ -10,6 +10,6 @@ namespace PIGUE.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
-        public int FormationId { get; set; }
+        public string FormationName { get; set; }
     }
 }

@@ -8,7 +8,7 @@ import {Home} from '../components/pages/Home/Home';
 import {AddPlayForm} from '../components/pages/AddPlayForm/AddPlayForm';
 // import {AddPlayerForm} from '../components/pages/AddPlayerForm/AddPlayerForm';
 
-import {Formation} from '../components/pages/Formation/Formation'
+// import {Formation} from '../components/pages/Formation/Formation'
 
 import './App.scss';
 
@@ -24,7 +24,7 @@ class App extends React.Component {
         <Route path="/playbook" exact component={Playbook}/>
         <Route path="/playbook/new" exact component={AddPlayForm}/>
         {/* <Route path="/roster/new" exact component={AddPlayerForm}/> */}
-        <Route path="/formations" exact component={Formation}/>
+        {/* <Route path="/formations" exact component={Formation}/> */}
         <Route path="/roster" exact component={Roster}/>
         </Switch>
       </Router>

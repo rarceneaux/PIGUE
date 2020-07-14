@@ -27,8 +27,17 @@ namespace PIGUE.Controllers
         [HttpPost]
         public IActionResult AddNewPlay(Play playToAdd)
         {
-            var playAdded = _playRepository.AddNewPlay(playToAdd);
-            return Created("", playAdded);
+            try
+            {
+                var playAdded = _playRepository.AddNewPlay(playToAdd);
+                return Created("", playAdded);
+            }
+            catch(Exception e)
+            {
+                Console.Write(e.Message);
+                return Created("", new object());
+
+            }
         }
     }
 }

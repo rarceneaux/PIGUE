@@ -11,7 +11,7 @@ namespace PIGUE.DataAccess
 {
     public class PlayerRepository
     {
-        const string ConnectionString = "Server=localhost;Database=Pigue;Trusted_Connection=True;";
+        const string ConnectionString = "Server=localhost;Database=PiguePen;Trusted_Connection=True;";
         //GET ALL PLAYERS
         public IEnumerable<Player> GetAllPlayers()
         {

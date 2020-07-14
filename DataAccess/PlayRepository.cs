@@ -12,7 +12,7 @@ namespace PIGUE.DataAccess
 {
     public class PlayRepository
     {
-        const string ConnectionString = "Server=localhost;Database=Pigue;Trusted_Connection=True;";
+        const string ConnectionString = "Server=localhost;Database=PiguePen;Trusted_Connection=True;";
         //GET ALL PLAYS
         public IEnumerable<Play> GetAllPlays()
         {
@@ -23,9 +23,9 @@ namespace PIGUE.DataAccess
         }
         public Play AddNewPlay(Play play)
         {
-            var sql = @"insert into Plays(Name,Type,FormationId)
+            var sql = @"insert into Plays(Name,Type,FormationName)
                 output inserted.*
-                 values(@Name,@Type,@FormationId)";
+                 values(@Name,@Type,@FormationName)";
 
             using (var db = new SqlConnection(ConnectionString))
             {

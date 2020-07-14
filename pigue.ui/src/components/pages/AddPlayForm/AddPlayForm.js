@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import  {getAllPlays, addNewPlay} from '../../../helpers/data/playData';
-
+import {getAllFormations} from '../../../helpers/data/formationData'
+ 
 import './AddPlayForm.scss';
 
 
@@ -9,17 +10,21 @@ class AddPlayForm extends React.Component {
     state = {
         Name: '',
         Type: '',
-        FormationId: '', 
+        FormationName: '', 
     }
 
 
     componentDidMount() {
+    // get all the formation names with IDs
+    // put in state
+    // build the dropdown value={formation.ID}
+
         const { playId } = this.props.match.params;
         if (playId) {
           getAllPlays((playId))
             .then((response) => {
               const play = response.data;
-              this.setState({ Name: play.Name, Type: play.Type, FormationId: play.FormationId });
+              this.setState({ Name: play.Name, Type: play.Type, FormationName: play.formationName });
             })
             .catch((err) => console.error('err', err));
         }
@@ -35,9 +40,9 @@ class AddPlayForm extends React.Component {
         this.setState({ Type: e.target.value });
       }
       
-      formationIdChange = (e) => {
+      formationNameChange = (e) => {
         e.preventDefault();
-        this.setState({ FormationId: e.target.value})
+        this.setState({ FormationName: e.target.value})
 
     }
 
@@ -46,54 +51,55 @@ class AddPlayForm extends React.Component {
         const newPlay = {
           name: this.state.Name,
           type: this.state.Type,
-          formationId: this.state.FormationId,
+          formationName: this.state.FormationName
         };
         addNewPlay((newPlay))
+        .then(() => this.props.history.push('/playbook'))
+        // this.setState({ Name: '', Type: '', FormationName: '' })
       };
 
       render() {
         const 
         { Name, 
           Type, 
-          FormationId } = this.state;
+          formationName } = this.state;
         return (
             <div className="PlayForm">
             <form className="play-details">
           <div className="form-group">
-            <label htmlFor="play-title"><h3>Name of Play</h3></label>
+            <label htmlFor="play-title"><h3>PLAY NAME</h3></label>
             <input
             type="text"
             className="form-control"
             id="play-name"
-            placeholder="Enter Play "
+            placeholder="Enter Play Name "
             value={Name}
             onChange={this.nameChange}/>
           </div>
           <div className="form-group">
-            <label htmlFor="play-type"><h3>Type of Play</h3></label>
+            <label htmlFor="play-type"><h3>RUN or PASS</h3></label>
             <input
             type="text"
             className="form-control"
             id="play-type"
-            placeholder="RUN or PASS"
+            placeholder="Run or Play"
             value={Type}
             onChange={this.typeChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formation-id"><h3>FormationId</h3></label>
+            <label htmlFor="formation-name"><h3>FORMATION NAME</h3></label>
             <input
             type="text"
             className="form-control"
             id="formation-name"
-            placeholder="Formation"
-            value={FormationId}
-            onChange={this.formationIdChange}
+            placeholder="Formation Name"
+            value={formationName}
+            onChange={this.formationNameChange}
             />
           </div>
           <button className="btn btn-dark" onClick={this.savePlayAEvent}>Save Play</button>
           <Link className="btn btn-dark cancel" to={'/huddle'}>Cancel</Link>
-
          </form>
          </div>
          );

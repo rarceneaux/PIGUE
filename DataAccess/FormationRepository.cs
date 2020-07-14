@@ -11,7 +11,7 @@ namespace PIGUE.DataAccess
 {
     public class FormationRepository
     {
-        const string ConnectionString = "Server=localhost;Database=Pigue;Trusted_Connection=True;";
+        const string ConnectionString = "Server=localhost;Database=PiguePen;Trusted_Connection=True;";
         //GET ALL FORMATIONS
         public IEnumerable<Formations> GetAllFormations()
         {
