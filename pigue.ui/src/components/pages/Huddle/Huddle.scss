@@ -1,9 +1,10 @@
-// .gameplan{
-//     height:100%;
-//     background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Huddle_Background.jpg');
-//     background-size: cover;
-//     background-position: center;
-//     background-repeat: no-repeat;
-// }
-
-
+.Huddle{
+    display: flex;
+    justify-content: center;
+    padding:65px;
+    height: 100vh;
+    background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Arceneaux.jpg');
+    background-repeat: no-repeat repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    }

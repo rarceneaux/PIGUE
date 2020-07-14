@@ -15,8 +15,10 @@ class PlayCard extends React.Component {
         return (
           <div className="PlayCard">
             <div className="card-body text-center play">
-            <h2>Name of Play:</h2>
+            <h2>Play Name:</h2>
             <h3 className="card-title">{play.name}</h3>
+            <h2>Play Formation:</h2>          
+            <h3 className="card-title">{play.formationName}</h3>
             <Link className="btn btn-dark " to={`/SinglePlayView/${SinglePlayView}/play`}>View</Link>    
       </div>
     </div>

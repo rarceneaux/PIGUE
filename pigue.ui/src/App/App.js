@@ -5,7 +5,10 @@ import {Playbook} from '../components/pages/Playbook/Playbook';
 import {Roster} from '../components/pages/Roster/Roster';
 import {Navbar} from '../components/shared/Navbar/Navbar';
 import {Home} from '../components/pages/Home/Home';
-import {Formation} from '../components/pages/Formation/Formation'
+import {AddPlayForm} from '../components/pages/AddPlayForm/AddPlayForm';
+// import {AddPlayerForm} from '../components/pages/AddPlayerForm/AddPlayerForm';
+
+// import {Formation} from '../components/pages/Formation/Formation'
 
 import './App.scss';
 
@@ -19,7 +22,9 @@ class App extends React.Component {
         <Route path="/" exact component={Home}/>
         <Route path="/huddle" exact component={Huddle}/>
         <Route path="/playbook" exact component={Playbook}/>
-        <Route path="/formations" exact component={Formation}/>
+        <Route path="/playbook/new" exact component={AddPlayForm}/>
+        {/* <Route path="/roster/new" exact component={AddPlayerForm}/> */}
+        {/* <Route path="/formations" exact component={Formation}/> */}
         <Route path="/roster" exact component={Roster}/>
         </Switch>
       </Router>
