@@ -6,12 +6,10 @@ import './PlayCard.scss';
 
 
 class PlayCard extends React.Component {
-    static propTypes = {
-        play: playShape,
-    }
+  
 
     render() {
-        const { play, SinglePlayView } = this.props;
+        const { play } = this.props;
         return (
           <div className="PlayCard">
             <div className="card-body text-center play">

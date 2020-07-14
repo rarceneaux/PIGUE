@@ -19,7 +19,7 @@ componentDidMount() {
     render() {
         return(
             <div className="Playbook">
-                {this.state.plays.map((play) => <PlayCard key={play.id} play={play}/>)}
+                {this.state.plays.map((p) => <PlayCard key={p.id} play={p}/>)}
             </div>
         )
     }

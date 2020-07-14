@@ -30,7 +30,7 @@ class App extends React.Component {
         <Route path="/playbook" exact component={Playbook}/>
         <Route path="/playbook/new" exact component={AddPlayForm}/>
         {/* <Route path="/roster/new" exact component={AddPlayerForm}/> */}
-       <Route path="/playbook/:playId" exact component={SinglePlayView}/>
+       <Route path="/playbook/:id" exact component={SinglePlayView}/>
       <Route path="/roster" exact component={Roster}/>
         </Switch>
       </Router>
