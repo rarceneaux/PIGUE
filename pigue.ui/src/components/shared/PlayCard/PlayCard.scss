@@ -1,16 +1,18 @@
 .PlayCard-jumbotron{
 width: 400px;
-height: 300px;
+height: 330px;
 margin: 25px;
-background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/playwrist.png');
+background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Gag+2.jpg');
 background-size: cover;
 background-repeat: no-repeat;
-// color:rgb(233, 110, 10);
-color:hsl(32, 100%, 50%);
+color:white;
+text-shadow: 2px 2px 4px #000000;
+font-size: xx-large;
+font-weight: bolder;
 border-radius: 25px;
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
 transition: 0.4s;
-// background-color: rgb(243, 155, 12);
-background-color:black;
-// opacity: 85%;
+// // background-color: rgb(243, 155, 12);
+background-color:white;
+// // opacity: 85%;
 }

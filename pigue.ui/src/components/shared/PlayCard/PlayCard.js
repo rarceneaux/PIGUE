@@ -19,7 +19,12 @@ class PlayCard extends React.Component {
             <h3 className="card-title">{play.formationName}</h3>
             <h3 className="card-title">{play.name}</h3>
             {/* <h2>Play Formation:</h2>           */}
-            <Link className="btn btn-dark " to={`/playbook/${play.id}`}>View</Link>    
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <Link className="btn btn-dark" to={`/playbook/${play.id}`}>View Play</Link>    
       </div>
     </div>
         );
