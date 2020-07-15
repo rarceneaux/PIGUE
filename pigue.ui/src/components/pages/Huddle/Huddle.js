@@ -12,7 +12,6 @@ class Huddle extends React.Component {
             <Link className="btn btn-primary" to={'/playbook'}>Playbook</Link>    
             <Link className="btn btn-success" to={'/playbook/new'}>Add Play</Link>    
             <Link className="btn btn-secondary" to={'/roster'}>Roster</Link>    
-
             </div>
             </div>
         )

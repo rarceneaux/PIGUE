@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import playShape from '../../../helpers/propz/playShape';
 import Proptypes from 'prop-types';
 import {getPlayById} from '../../../helpers/data/playData';
+import {PlayerCard} from '../../shared/PlayerCard/PlayerCard';
 import './SinglePlayView.scss';
 
 
@@ -23,11 +24,12 @@ componentDidMount() {
         console.log(play)
         return (
           <div className="SinglePlayView">
-            <div className="card-body text-center play">
+            <div className="card-body text-center">
             <h2>Play Name:</h2>
             <h3 className="card-title">{play.name}</h3>
             <h2>Play Formation:</h2>          
             <h3 className="card-title">{play.formationName}</h3>
+            {/* <PlayerCard/> */}
             <Link className="btn btn-dark" to={'/playbook'}>Playbook</Link>   
             <Link className="btn btn-danger" to={'/huddle'}>Delete</Link>   
 
