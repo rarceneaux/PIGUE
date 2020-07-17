@@ -22,21 +22,28 @@ componentDidMount() {
     render() {
         const { play } = this.state;
         console.log(play)
-        return (
-          <div className="SinglePlayView">
-            <div className="card-body text-center">
-            <h2>Play Name:</h2>
-            <h3 className="card-title">{play.name}</h3>
-            <h2>Play Formation:</h2>          
-            <h3 className="card-title">{play.formationName}</h3>
-            {/* <PlayerCard/> */}
-            <Link className="btn btn-dark" to={'/playbook'}>Playbook</Link>   
-            <Link className="btn btn-danger" to={'/huddle'}>Delete</Link>   
+        if(play.players){
 
+          return (
+            <div className="SinglePlayView">
+              <div className="card-body text-center">
+              <h2>Play Name:</h2>
+              <h3 className="card-title">{play.playName}</h3>
+              <h2>Play Formation:</h2>          
+              <h3 className="card-title">{play.formationName}</h3>
+              {/* <PlayerCard/> */}
+              {play.players.map((p) => <PlayerCard key={p.id} player={p} />)}
+  
+              <Link className="btn btn-dark" to={'/playbook'}>Playbook</Link>   
+              <Link className="btn btn-danger" to={'/huddle'}>Delete</Link>   
+        </div>
       </div>
-    </div>
-        );
+          );
+        }
+        else{
+          return "LOADING"
+        }
       }
 }
 
-export {SinglePlayView};
+export {SinglePlayView}

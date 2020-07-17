@@ -72,7 +72,7 @@ class AddPlayForm extends React.Component {
             type="text"
             className="form-control"
             id="play-name"
-            placeholder="Enter Play Name "
+            placeholder="Enter Play Name"
             value={Name}
             onChange={this.nameChange}/>
           </div>
@@ -82,7 +82,7 @@ class AddPlayForm extends React.Component {
             type="text"
             className="form-control"
             id="play-type"
-            placeholder="Run or Play"
+            placeholder=""
             value={Type}
             onChange={this.typeChange}
             />
@@ -93,7 +93,7 @@ class AddPlayForm extends React.Component {
             type="text"
             className="form-control"
             id="formation-name"
-            placeholder="Formation Name"
+            placeholder=""
             value={formationName}
             onChange={this.formationNameChange}
             />
