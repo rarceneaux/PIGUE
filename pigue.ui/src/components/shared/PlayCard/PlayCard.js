@@ -22,7 +22,7 @@ class PlayCard extends React.Component {
             <br></br>
             <br></br>
             <br></br>
-            <Link className="btn btn-dark" to={`/playbook/${play.id}`}>View Play</Link>    
+            <Link className="btn btn-dark btn-sm" to={`/playbook/${play.id}`}>View Play</Link>    
       </div>
     </div>
         );

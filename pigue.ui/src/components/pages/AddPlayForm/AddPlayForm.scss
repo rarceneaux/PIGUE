@@ -19,7 +19,7 @@ justify-content: center;
 padding:65px;
 height: 100vh;
 background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/648f10ecf0160727277ac83e3c40826f.jpg');
-background-repeat: no-repeat repeat;
+background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
 
@@ -30,8 +30,11 @@ background-attachment: fixed;
 }
 
 #play-name, #play-type, #formation-name{
-color:#0011ff;
+  color:black;
 }
 
+.attheline{
+  color:#0011ff;
+}
 
     
