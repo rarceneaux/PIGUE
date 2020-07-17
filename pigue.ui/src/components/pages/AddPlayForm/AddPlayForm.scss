@@ -9,6 +9,8 @@
   background-repeat: no-repeat repeat;
 background-size: cover;
 background-attachment: fixed;
+color:#ee830a;
+padding-left: 15px;
 }
 
 .PlayForm{
@@ -27,19 +29,9 @@ background-attachment: fixed;
     width: 50%;
 }
 
-#play-name{
-background-color:rgb(11, 11, 197);
-color:red;
+#play-name, #play-type, #formation-name{
+color:#0011ff;
 }
 
-#play-type{
-  background-color:rgb(11, 11, 197);
-  color:red;
-  }
-
-  #formation-name{
-    background-color:rgb(11, 11, 197);
-    color:red;
-    }
 
     

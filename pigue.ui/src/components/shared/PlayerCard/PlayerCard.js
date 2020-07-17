@@ -14,9 +14,8 @@ class PlayerCard extends React.Component {
         const { player } = this.props;
         return (
           <div className="PlayerCard">
-            <div className="card-img-top text-center player">
-            <img src={player.img}  alt="..."/>
-            {/* <h1 className="card-title">{play.Img}</h1> */}
+            <div className="card-body text-center">
+            <img className="topps" src={player.img}  alt="..."/>
             <h1 className="card-title">{player.firstName} {player.lastName}</h1>
             <h1 className="card-title">{player.position}</h1>
 
