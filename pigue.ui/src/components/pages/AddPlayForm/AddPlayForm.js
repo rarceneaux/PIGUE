@@ -55,7 +55,6 @@ class AddPlayForm extends React.Component {
         };
         addNewPlay((newPlay))
         .then(() => this.props.history.push('/playbook'))
-        // this.setState({ Name: '', Type: '', FormationName: '' })
       };
 
       render() {
@@ -67,39 +66,39 @@ class AddPlayForm extends React.Component {
             <div className="PlayForm">
             <form className="play-details">
           <div className="form-group">
-            <label htmlFor="play-title"><h3>PLAY NAME</h3></label>
+            <label htmlFor="play-title"><h3 className="attheline"> PLAY NAME</h3></label>
             <input
             type="text"
             className="form-control"
             id="play-name"
-            placeholder="Enter Play Name "
+            placeholder="Enter Play Name"
             value={Name}
             onChange={this.nameChange}/>
           </div>
           <div className="form-group">
-            <label htmlFor="play-type"><h3>RUN or PASS</h3></label>
+            <label htmlFor="play-type"><h3 className="attheline">RUN or PASS</h3></label>
             <input
             type="text"
             className="form-control"
             id="play-type"
-            placeholder="Run or Play"
+            placeholder="Run or Pass"
             value={Type}
             onChange={this.typeChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formation-name"><h3>FORMATION NAME</h3></label>
+            <label htmlFor="formation-name"><h3 className="attheline">FORMATION NAME</h3></label>
             <input
             type="text"
             className="form-control"
             id="formation-name"
-            placeholder="Formation Name"
+            placeholder="Formation"
             value={formationName}
             onChange={this.formationNameChange}
             />
           </div>
-          <button className="btn btn-dark" onClick={this.savePlayAEvent}>Save Play</button>
-          <Link className="btn btn-dark cancel" to={'/huddle'}>Cancel</Link>
+          <button className="btn btn-dark btn-lg" onClick={this.savePlayAEvent}>Save Play</button>
+          <Link className="btn btn-dark btn-lg cancel" to={'/huddle'}>Cancel</Link>
          </form>
          </div>
          );

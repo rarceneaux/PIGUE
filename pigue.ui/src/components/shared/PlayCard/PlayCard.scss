@@ -1,10 +1,23 @@
-.PlayCard{
-width: 350px;
-height: 250px;
+.PlayCard-jumbotron{
+width: 400px;
+height: 335px;
 margin: 25px;
-background-color: lightgray;
-color:black;
+background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Gag+2.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+color:#0011ff;
+// color: black;
+text-shadow: 2px 2px 4px #ee830a;
+
 border-radius: 25px;
-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
-transition: 0.4s;
+// box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+// transition: 0.4s;
+// // background-color: rgb(243, 155, 12);
+// background-color:white;
+// // opacity: 85%;
+}
+
+.btn-dark{
+    color:#0011ff;
+    background-color:#ee830a;
 }

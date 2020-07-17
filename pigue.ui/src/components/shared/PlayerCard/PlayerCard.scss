@@ -1,0 +1,23 @@
+.PlayerCard{
+    width: 350px;
+    height: 450px;
+    margin: 25px;
+    // background-color: lightgray;
+    background-color: #ee830a;
+    color:#0011ff;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+    transition: 0.4s;
+    border: solid #0011ff;
+    // display:flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // align-items: flex-start;
+    }
+
+    .topps{
+        width: 250px;
+        height: 250px;
+        border-radius: 25px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+      }
