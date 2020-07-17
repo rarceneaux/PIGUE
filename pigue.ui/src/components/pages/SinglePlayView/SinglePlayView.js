@@ -29,8 +29,9 @@ componentDidMount() {
               <div className="daPlay">
               <h3 className="play1">{play.playName}</h3>
               <h3 className="play1">{play.formationName}</h3>
-            <Link className="btn btn-dark btn-lg" to={'/playbook'}>Audible</Link>   
-            <Link className="btn btn-primary btn-lg" to={'/huddle'}>Timeout</Link>   
+              {/* <img className="formations" src={play.formationimg}  alt="..."/> */}
+            {/* <Link className="btn btn-dark btn-lg" to={'/playbook'}>Audible</Link>   
+            <Link className="btn btn-primary btn-lg" to={'/huddle'}>Timeout</Link>    */}
             {play.players.map((p) => <PlayerCard key={p.id} player={p} />)}
         </div>
       </div>);

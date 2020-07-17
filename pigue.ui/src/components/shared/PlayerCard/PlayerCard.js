@@ -17,7 +17,7 @@ class PlayerCard extends React.Component {
             <div className="card-body text-center">
             <img className="topps" src={player.img}  alt="..."/>
             <h1 className="card-title">{player.firstName} {player.lastName}</h1>
-            <h1 className="card-title">{player.position}</h1>
+            <h2 className="card-title">{player.position}</h2>
 
       </div>
     </div>
