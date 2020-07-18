@@ -1,6 +1,7 @@
 import React from 'react';
 import {PlayerCard} from '../../shared/PlayerCard/PlayerCard';
 import {getAllPlayers} from '../../../helpers/data/playerData';
+import { Link } from 'react-router-dom';
 import Drone from '../../video/drone.mp4';
 import './Roster.scss';
 
@@ -21,7 +22,7 @@ componentDidMount(){
             <div className="Roster">
             <div className="team">
 <video autoPlay loop muted style={{
-    position: "st",
+    position: "fixed",
     width:"100%",
     left:"50%",
     top:"50%",
@@ -32,7 +33,8 @@ componentDidMount(){
 }} >
     <source src={Drone} type="video/mp4"/>
 </video>
-            {/* <h1>THE SQUAD</h1> */}
+            {/* <Link className="btn btn-primary btn-lg" to={'/huddle'}>Add Player</Link>    */}
+
             </div>
             {this.state.players.map((player) => <PlayerCard key={player.id} player={player}/>)}
             </div>

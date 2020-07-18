@@ -1,25 +1,29 @@
-.SinglePlayView{
+.daPlay{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 25px;
   }
   
   .play1{
     text-align: center;
+    margin:25px;
   }
 
-  .btn{
-    align-content: center;
-  }
   
+  // .btn{
+  //   align-items: center;
+  // }
+
   .spinner-border{
     background-color:#ee830a;
-
   }
 
-  // .PlayerCard{
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-around;
+  .SinglePlayView{
+    text-align:center;
+  }
+
+  // .single{
+  //   justify-content: center;
   // }

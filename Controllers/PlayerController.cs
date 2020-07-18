@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Composition.Convention;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -9,7 +10,7 @@ using PIGUE.Models;
 
 namespace PIGUE.Controllers
 {
-    [Route("api/roster")]
+    [Route("api/players")]
     [ApiController]
     public class PlayerController : ControllerBase
     {
@@ -17,10 +18,17 @@ namespace PIGUE.Controllers
 
         /*GET ALL PLAYERS*/
         [HttpGet]
-            public IActionResult GetAllPlayers()
-            {
-                var allPlayers = _playerRepository.GetAllPlayers();
-                return Ok(allPlayers);
-            }
+        public IActionResult GetAllPlayers()
+        {
+            var allPlayers = _playerRepository.GetAllPlayers();
+            return Ok(allPlayers);
         }
+
+        [HttpPost]
+        public IActionResult AddNewPlayer(Player playerToAdd)
+        {
+            var playerAdded = _playerRepository.AddNewPlayer(playerToAdd);
+            return Created("", playerAdded);
+        }
+    }
 }

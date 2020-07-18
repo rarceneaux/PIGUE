@@ -97,7 +97,7 @@ class AddPlayForm extends React.Component {
             onChange={this.formationNameChange}
             />
           </div>
-          <button className="btn btn-dark btn-lg" onClick={this.savePlayAEvent}>Save Play</button>
+          <button className="btn btn-dark btn-lg saveplay" onClick={this.savePlayAEvent}>Save Play</button>
           <Link className="btn btn-dark btn-lg cancel" to={'/huddle'}>Cancel</Link>
          </form>
          </div>
