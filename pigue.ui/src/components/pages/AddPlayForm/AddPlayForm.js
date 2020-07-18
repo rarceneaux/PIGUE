@@ -11,6 +11,7 @@ class AddPlayForm extends React.Component {
         Name: '',
         Type: '',
         FormationName: '', 
+        Type: ''
     }
 
 
@@ -24,7 +25,7 @@ class AddPlayForm extends React.Component {
           getAllPlays((playId))
             .then((response) => {
               const play = response.data;
-              this.setState({ Name: play.Name, Type: play.Type, FormationName: play.formationName });
+              this.setState({ Name: play.Name, Type: play.Type, FormationName: play.FormationName });
             })
             .catch((err) => console.error('err', err));
         }
@@ -61,8 +62,8 @@ class AddPlayForm extends React.Component {
         const 
         { Name, 
           Type, 
-          formationName } = this.state;
-        return (
+          FormationName } = this.state; 
+                 return (
             <div className="PlayForm">
             <form className="play-details">
           <div className="form-group">
@@ -75,16 +76,18 @@ class AddPlayForm extends React.Component {
             value={Name}
             onChange={this.nameChange}/>
           </div>
-          <div className="form-group">
-            <label htmlFor="play-type"><h3 className="attheline">RUN or PASS</h3></label>
-            <input
+          <div className="input-group mb-3">
+            <label htmlFor="play-type"></label>
+            <select
             type="text"
             className="form-control"
-            id="play-type"
-            placeholder="Run or Pass"
+            id="Type"
             value={Type}
-            onChange={this.typeChange}
-            />
+            onChange={this.typeChange}>
+            <option defaultValue>Choose Run or Pass...</option>
+            <option>Run</option>
+            <option>Pass</option>
+           </select>
           </div>
           <div className="form-group">
             <label htmlFor="formation-name"><h3 className="attheline">FORMATION NAME</h3></label>
@@ -93,7 +96,7 @@ class AddPlayForm extends React.Component {
             className="form-control"
             id="formation-name"
             placeholder="Formation"
-            value={formationName}
+            value={FormationName}
             onChange={this.formationNameChange}
             />
           </div>

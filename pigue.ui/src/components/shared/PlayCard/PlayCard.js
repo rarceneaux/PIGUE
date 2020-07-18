@@ -19,6 +19,7 @@ class PlayCard extends React.Component {
             <br></br>
             <h2 className="card-title">{play.formationName}</h2>
             <h3 className="card-title">{play.name}</h3>
+            <h4 className="card-title">{play.type}</h4>
             <br></br>
             <br></br>
             <br></br>

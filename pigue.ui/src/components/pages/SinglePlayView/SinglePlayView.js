@@ -38,11 +38,12 @@ componentDidMount() {
 }} >
     <source src={SinglePlay} type="video/mp4"/>
 </video>
-                
+              <div className="PlayBackGround">
               <h2 className="play1">{play.playName}</h2>
               <h3 className="play1">{play.formationName}</h3>
             <Link className="btn btn-primary btn-lg" to={'/huddle'}>Timeout</Link>   
-            <Link className="btn btn-dark btn-lg" to={'/playbook'}>Audible</Link>   
+            <Link className="btn btn-dark btn-lg" to={'/playbook'}>Audible</Link> 
+            </div>  
               <div className="daPlay">
               {/* <img className="formations" src={play.formationimg}  alt="..."/> */}
             {play.players.map((p) => <PlayerCard key={p.id} player={p} />)}
