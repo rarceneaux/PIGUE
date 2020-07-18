@@ -33,5 +33,19 @@ namespace PIGUE.DataAccess
                 return result;
             }
         }
+        public Play GetPlayById(int id)
+        {
+            var play = new Play();
+            var sql = @"select *
+                         from Plays
+                            where Id = @id";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var parameters = new { Id = id };
+                play = db.QueryFirstOrDefault<Play>(sql, parameters);
+            }
+                return play;
+        }
     }
 }

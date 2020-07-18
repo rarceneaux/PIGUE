@@ -14,6 +14,7 @@ namespace PIGUE.Controllers
     public class PlayController : ControllerBase
     {
         PlayRepository _playRepository = new PlayRepository();
+        PlayerRepository _playerRepository = new PlayerRepository();
 
         /*GET ALL PLAYS*/
         [HttpGet]
@@ -39,5 +40,19 @@ namespace PIGUE.Controllers
 
             }
         }
+        [HttpGet("{id}")]
+        public IActionResult GetPlayById(int id)
+        {
+            var play = _playRepository.GetPlayById(id);
+            var playviewmodel = new CompletePlayViewModel()
+            {
+                PlayName = play.Name,
+                FormationName = play.FormationName,
+                Players = _playerRepository.GetPlayersFor(play.Id)
+            };
+            if (play == null) return NotFound("This Play is not in our playbook coach.");
+            return Ok(playviewmodel); 
+        }
+
     }
 }
