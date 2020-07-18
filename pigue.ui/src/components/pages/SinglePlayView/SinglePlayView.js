@@ -4,6 +4,7 @@ import playShape from '../../../helpers/propz/playShape';
 import Proptypes from 'prop-types';
 import {getPlayById} from '../../../helpers/data/playData';
 import {PlayerCard} from '../../shared/PlayerCard/PlayerCard';
+import SinglePlay from '../../video/SinglePlayView.mp4';
 import './SinglePlayView.scss';
 
 
@@ -23,15 +24,26 @@ componentDidMount() {
         const { play } = this.state;
         console.log(play)
         if(play.players){
-
           return (
             <div className="SinglePlayView">
-              <div className="daPlay">
-              <h3 className="play1">{play.playName}</h3>
+            <video autoPlay loop muted style={{
+    position: "fixed",
+    width:"100%",
+    left:"50%",
+    top:"50%",
+    height:"100%",
+    objectFit:"cover",
+    transform:"translate(-50%,-50%)",
+    zIndex:"-10"
+}} >
+    <source src={SinglePlay} type="video/mp4"/>
+</video>
+              <h2 className="play1">{play.playName}</h2>
               <h3 className="play1">{play.formationName}</h3>
+            <Link className="btn btn-primary btn-lg" to={'/huddle'}>Timeout</Link>   
+            <Link className="btn btn-dark btn-lg" to={'/playbook'}>Audible</Link>   
+              <div className="daPlay">
               {/* <img className="formations" src={play.formationimg}  alt="..."/> */}
-            {/* <Link className="btn btn-dark btn-lg" to={'/playbook'}>Audible</Link>   
-            <Link className="btn btn-primary btn-lg" to={'/huddle'}>Timeout</Link>    */}
             {play.players.map((p) => <PlayerCard key={p.id} player={p} />)}
         </div>
       </div>);

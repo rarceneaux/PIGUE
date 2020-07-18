@@ -21,7 +21,7 @@ componentDidMount(){
             <div className="Roster">
             <div className="team">
 <video autoPlay loop muted style={{
-    position: "st",
+    position: "fixed",
     width:"100%",
     left:"50%",
     top:"50%",
