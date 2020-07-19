@@ -84,21 +84,28 @@ class AddPlayForm extends React.Component {
             id="Type"
             value={Type}
             onChange={this.typeChange}>
-            <option defaultValue>Choose Run or Pass...</option>
+            <option defaultValue>Choose Play Type...</option>
             <option>Run</option>
             <option>Pass</option>
            </select>
           </div>
-          <div className="form-group">
-            <label htmlFor="formation-name"><h3 className="attheline">FORMATION NAME</h3></label>
-            <input
+          <div className="input-group mb-3">
+            <label htmlFor="FormationName"></label>
+            <select
             type="text"
             className="form-control"
-            id="formation-name"
-            placeholder="Formation"
+            id="FormationName"
             value={FormationName}
-            onChange={this.formationNameChange}
-            />
+            onChange={this.formationNameChange}>
+            <option defaultValue>Choose Formation...</option>
+            <option>Wing Right</option>
+            <option>Wing Left</option>
+            <option>Wing Right & Left </option>
+            {/* <option>Pass</option>    
+            <option>Pass</option>
+            <option>Run</option>
+            <option>Pass</option> */}
+           </select>
           </div>
           <button className="btn btn-dark btn-lg saveplay" onClick={this.savePlayAEvent}>Save Play</button>
           <Link className="btn btn-dark btn-lg cancel" to={'/huddle'}>Cancel</Link>

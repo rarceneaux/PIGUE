@@ -13,17 +13,11 @@ class PlayCard extends React.Component {
         return (
           <div className="PlayCard-jumbotron">
             <div className="card-body text-center play ">
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <h2 className="card-title">{play.formationName}</h2>
-            <h3 className="card-title">{play.name}</h3>
-            <h4 className="card-title">{play.type}</h4>
-            <br></br>
-            <br></br>
-            <br></br>
-            <Link className="btn btn-dark btn-sm" to={`/playbook/${play.id}`}>View Play</Link>    
+            <img class="card-img-top" src={'https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Gag+2.jpg'} alt="Card image cap"></img>
+            <h1 className="card-title">{play.formationName}</h1>
+            <h2 className="card-title">{play.name}</h2>
+            <h3 className="card-title">{play.type}</h3>
+              <Link className="btn btn-dark btn-sm" to={`/playbook/${play.id}`}>View Play</Link>    
       </div>
     </div>
         );
