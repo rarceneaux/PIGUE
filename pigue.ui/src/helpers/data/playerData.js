@@ -7,4 +7,4 @@ const getAllPlayers = () =>  new Promise((resolve, reject) => {
     });
 
 
-export { getAllPlayers };
+export  { getAllPlayers };

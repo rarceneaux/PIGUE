@@ -13,7 +13,7 @@ class PlayCard extends React.Component {
         return (
           <div className="PlayCard-jumbotron">
             <div className="card-body text-center play ">
-            <img class="card-img-top" src={'https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Gag+2.jpg'} alt="Card image cap"></img>
+            <img class="card-img-top" src={'https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/black8.jpg'} alt="Card image cap"></img>
             <h1 className="card-title">{play.formationName}</h1>
             <h2 className="card-title">{play.name}</h2>
             <h3 className="card-title">{play.type}</h3>

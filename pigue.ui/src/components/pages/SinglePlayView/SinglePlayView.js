@@ -38,7 +38,7 @@ componentDidMount() {
 }} >
     <source src={SinglePlay} type="video/mp4"/>
 </video>
-              <div className="PlayBackGround">
+            <div className="PlayBackGround">
               <h2 className="play1">{play.playName}</h2>
               <h3 className="play1">{play.formationName}</h3>
             <Link className="btn btn-primary btn-lg" to={'/huddle'}>Timeout</Link>   
