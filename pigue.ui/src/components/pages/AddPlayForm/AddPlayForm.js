@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import MultiSelect from "react-multi-select-component";
 import PropTypes from 'prop-types';
 import {getAllPlays, addNewPlay} from '../../../helpers/data/playData';
 import {playerShape} from '../../../helpers/propz/playerShape';
@@ -59,14 +61,9 @@ class AddPlayForm extends React.Component {
       }
 
     
-      playerChange = (e) => {
-        e.preventDefault();
-        let filterPlayers = [];
-        let selectedPlayers = [];
-        filterPlayers = this.state.players.filter((player) => player.playerId === e.target.value);
-        filterPlayers.push(selectedPlayers);
-        const newSelectedPlayers = [...this.state.selectedPlayers, ...filterPlayers]
-        this.setState({ selectedPlayers: newSelectedPlayers })
+      playerChange = (playersFromMultiSelect) => {
+        console.log(playersFromMultiSelect);
+        this.setState({ selectedPlayers: playersFromMultiSelect })
 }
 
     savePlayAEvent = (e) => {
@@ -76,14 +73,17 @@ class AddPlayForm extends React.Component {
           type: this.state.Type,
           formationName: this.state.FormationName,
           players: this.state.selectedPlayers,
- };
-        addNewPlay((newPlay))
+      };
+        axios.post("https://localhost:44307/api/playbook", newPlay)
         .then(() => this.props.history.push('/playbook'))
       };
 
       render() {
         const { Name, Type, FormationName, players } = this.state; 
-                         return (
+        const playersForSelect =   players.map((player) => {
+          return { label: player.firstName + " " + player.lastName, value: player.id }
+        });
+        return (
             <div className="PlayForm">
             <form className="play-details">
           <div className="form-group">
@@ -125,18 +125,14 @@ class AddPlayForm extends React.Component {
             <option>Power II Stovepipe</option>
            </select>
           </div>
-          <div className="input-group mb-3">
+          <div className="">
             <label htmlFor="players"></label>
-            <select
-              className="form-control selectpicker" multiple
-              id="players"
-              value={players}
-              onChange={this.playerChange}>
-              {
-              players.map((player) => (
-              (<option key={player.id} value={player.id}>{player.firstName} {player.lastName} {player.position} </option>)))
-              }
-            </select>
+            <MultiSelect
+                  options={playersForSelect}
+                  value={this.state.selectedPlayers}
+                  onChange={this.playerChange}
+                  labelledBy={"Select"}
+            />
           </div>
           <br></br>
           <br></br>

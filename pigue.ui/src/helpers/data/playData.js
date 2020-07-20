@@ -7,8 +7,11 @@ const getAllPlays = () =>  new Promise((resolve, reject) => {
     .catch(error => reject(error));
     });
 
-const addNewPlay = (newPlay) => axios.post("https://localhost:44307/api/playbook", newPlay);
-
+const addNewPlay = (newPlay) => 
+{
+    console.log(newPlay);
+axios.post("https://localhost:44307/api/playbook", newPlay);
+}
 const getPlayById = (playId) => axios.get("https://localhost:44307/api/playbook/" + playId);
 
 
