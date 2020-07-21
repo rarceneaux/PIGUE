@@ -26,7 +26,7 @@ namespace PIGUE.Controllers
 
         /*ADD NEW PLAY*/
         [HttpPost]
-        public IActionResult AddNewPlay(Play playToAdd)
+        public IActionResult AddNewPlay(PlayForm playToAdd)
         {
             try
             {
@@ -40,15 +40,16 @@ namespace PIGUE.Controllers
 
             }
         }
-        [HttpGet("{id}")]
-        public IActionResult GetPlayById(int id)
+
+        [HttpGet("{playId}")]
+        public IActionResult GetPlayById(int playId)
         {
-            var play = _playRepository.GetPlayById(id);
+            var play = _playRepository.GetPlayById(playId);
             var playviewmodel = new CompletePlayViewModel()
             {
                 PlayName = play.Name,
                 FormationName = play.FormationName,
-                Players = _playerRepository.GetPlayersFor(play.Id)
+                Players = _playerRepository.GetPlayersFor(playId)
             };
             if (play == null) return NotFound("This Play is not in our playbook coach.");
             return Ok(playviewmodel); 

@@ -18,27 +18,45 @@ namespace PIGUE.DataAccess
         {
             using (var db = new SqlConnection(ConnectionString))
             {
-                return db.Query<Play>("select * from plays");
+                return db.Query<Play>(@"select
+                            p.Id,
+                            p.Name,
+                            p.Type,
+                            p.FormationId,
+                            f.Name as FormationName
+                        from Plays as p
+                        join Formations as f
+                            on p.FormationId = f.Id");
             }
         }
-        public Play AddNewPlay(Play play)
+        public Play AddNewPlay(PlayForm play)
         {
-            var sql = @"insert into Plays(Name,Type,FormationName)
+            var sql = @"insert into Plays(Name,Type,FormationId)
                 output inserted.*
-                 values(@Name,@Type,@FormationName)";
+                 values(@Name,@Type,@FormationId)";
 
             using (var db = new SqlConnection(ConnectionString))
             {
                 var result = db.QueryFirstOrDefault<Play>(sql, play);
+
+                foreach (PlayerSelectOption player in play.Players)
+                {
+                    
+                    var playersql = @"insert into PlayPlayers(PlayerId, PlayId)
+                                    values(@PlayerId,@PlayId)";
+                    db.Query<PlayPlayers>(playersql, new { PlayId = result.Id, PlayerId = player.Value });
+                }
+
                 return result;
             }
         }
         public Play GetPlayById(int id)
         {
             var play = new Play();
-            var sql = @"select *
+            var sql = @"select Plays.Name as Name, Formations.Name as FormationName
                          from Plays
-                            where Id = @id";
+                            join Formations on Plays.FormationId = Formations.Id
+                            where Plays.Id = @id";
 
             using (var db = new SqlConnection(ConnectionString))
             {

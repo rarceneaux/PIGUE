@@ -7,4 +7,7 @@ const getAllPlayers = () =>  new Promise((resolve, reject) => {
     });
 
 
-export  { getAllPlayers };
+const addNewPlayer = (newPlayer) => axios.post("https://localhost:44307/api/roster", newPlayer);
+
+
+export  { getAllPlayers, addNewPlayer };
