@@ -20,7 +20,7 @@ componentDidMount(){
     render() {
         return(
             <div className="Roster">
-            <div className="team">
+                   <div className="team">
 <video autoPlay loop muted style={{
     position: "fixed",
     width:"100%",
@@ -34,6 +34,7 @@ componentDidMount(){
     <source src={Drone} type="video/mp4"/>
 </video>
             {/* <Link className="btn btn-primary btn-lg" to={'/huddle'}>Add Player</Link>    */}
+            {/* <Link className="btn btn-primary btn-lg add-player" to={'/huddle'}>Add Player</Link> */}
 
             </div>
             {this.state.players.map((player) => <PlayerCard key={player.id} player={player}/>)}

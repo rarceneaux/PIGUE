@@ -1,12 +1,12 @@
 .PlayCard-jumbotron{
 width: 400px;
-height: 335px;
+height:425px;
 margin: 25px;
-background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Gag+2.jpg');
-background-size: cover;
-background-repeat: no-repeat;
+// background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Gag+2.jpg');
+// background-size: cover;
+
 color:#0011ff;
-// color: black;
+background-color: black;
 text-shadow: 2px 2px 4px #ee830a;
 
 border-radius: 25px;
@@ -20,4 +20,8 @@ border-radius: 25px;
 .btn-dark{
     color:#0011ff;
     background-color:#ee830a;
+}
+
+.card-img-top{
+ width: 250px;
 }
