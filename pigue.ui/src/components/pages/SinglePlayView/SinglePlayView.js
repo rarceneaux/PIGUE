@@ -46,7 +46,7 @@ componentDidMount() {
             </div>  
               <div className="daPlay">
               {/* <img className="formations" src={play.formationimg}  alt="..."/> */}
-            {play.players.map((p) => <PlayerCard key={p.id} player={p} />)}
+            {play.players.map((p) => <PlayerCard key={p.id} player={p} play={play} />)}
         </div>
       </div>);
         }

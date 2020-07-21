@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import MultiSelect from "react-multi-select-component";
 import PropTypes from 'prop-types';
 import {getAllPlays, addNewPlay} from '../../../helpers/data/playData';
-import {playerShape} from '../../../helpers/propz/playerShape';
 import {getAllPlayers} from '../../../helpers/data/playerData';
 import {getAllFormations} from '../../../helpers/data/formationData'
  
@@ -17,33 +16,31 @@ class AddPlayForm extends React.Component {
       selectedPlayers: [],
       Name: '',
       Type: '',
-      FormationName: '', 
-      filterPlayers: ''
+      FormationId: 1, 
+      filterPlayers: '',
+      formations: [],
   }
 
     componentDidMount() {
-    // get all the formation names with IDs
-    // put in state
-    // build the dropdown value={formation.ID}
         this.getPlayers();
-        const { playId } = this.props.match.params;
-        if (playId) {
-          getAllPlays((playId))
-            .then((response) => {
-              const play = response.data;
-              this.setState({ Name: play.Name, Type: play.Type, FormationName: play.FormationName });
-            })
-            .catch((err) => console.error('err', err));
-        }
+        this.getFormations();
       }
     
-      getPlayers = () => {
-       getAllPlayers()
-       .then((players) => {
-         this.setState({players});
-       })
-       .catch((errFromPlayers) => console.error({ errFromPlayers}));
-      }
+    getPlayers = () => {
+      getAllPlayers()
+      .then((players) => {
+        this.setState({players});
+      })
+      .catch((errFromPlayers) => console.error({ errFromPlayers}));
+    }
+
+    getFormations = () => {
+      getAllFormations()
+      .then((formations) => {
+        this.setState({formations});
+      })
+      .catch((errFromFormations) => console.error({ errFromFormations}));
+    }
 
       nameChange = (e) => {
         e.preventDefault();
@@ -55,33 +52,36 @@ class AddPlayForm extends React.Component {
         this.setState({ Type: e.target.value });
       }
       
-      formationNameChange = (e) => {
+      formationIdChange = (e) => {
         e.preventDefault();
-        this.setState({ FormationName: e.target.value})
+        this.setState({ FormationId: e.target.value})
       }
 
     
       playerChange = (playersFromMultiSelect) => {
-        console.log(playersFromMultiSelect);
         this.setState({ selectedPlayers: playersFromMultiSelect })
-}
+      }
 
     savePlayAEvent = (e) => {
-        e.preventDefault();
-        const newPlay = {
-          name: this.state.Name,
-          type: this.state.Type,
-          formationName: this.state.FormationName,
-          players: this.state.selectedPlayers,
-      };
-        axios.post("https://localhost:44307/api/playbook", newPlay)
-        .then(() => this.props.history.push('/playbook'))
+      e.preventDefault();
+      const newPlay = {
+        name: this.state.Name,
+        type: this.state.Type,
+        formationId: parseInt(this.state.FormationId),
+        // FormationName: this.state.FormationName,
+        players: this.state.selectedPlayers,
       };
 
-      render() {
-        const { Name, Type, FormationName, players } = this.state; 
+      axios.post("https://localhost:44307/api/playbook", newPlay)
+      .then(() => {
+        this.props.history.push('/playbook')
+      });
+    };
+
+    render() {
+        const { Name, Type, FormationId, players, formations } = this.state; 
         const playersForSelect =   players.map((player) => {
-          return { label: player.firstName + " " + player.lastName, value: player.id }
+          return { label: player.firstName + " " + player.lastName + " " + player.position, value: player.id }
         });
         return (
             <div className="PlayForm">
@@ -110,19 +110,18 @@ class AddPlayForm extends React.Component {
            </select>
           </div>
           <div className="input-group mb-3">
-            <label htmlFor="FormationName"></label>
+        <label htmlFor="FormationName"></label>
             <select
+            type="text"
             className="form-control"
             id="FormationName"
-            value={FormationName}
-            onChange={this.formationNameChange}>
-            <option defaultValue>Choose Formation...</option>
-            <option>Wing Right</option>
-            <option>Wing Left</option>
-            <option>Wing Right & Left </option>
-           <option>Trips Right</option>    
-            <option>Power I Stovepipe</option>
-            <option>Power II Stovepipe</option>
+            type="number"
+            value={FormationId}
+            onChange={this.formationIdChange} placeholder='Select Formation'>
+          {
+            formations.map(formation => <option key={formation.id} value={formation.id}>{formation.name}</option> )
+          }
+        
            </select>
           </div>
           <div className="">
