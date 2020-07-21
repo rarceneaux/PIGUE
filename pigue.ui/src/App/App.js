@@ -8,7 +8,9 @@ import {Roster} from '../components/pages/Roster/Roster';
 import {Navbar} from '../components/shared/Navbar/Navbar';
 import {Home} from '../components/pages/Home/Home';
 import {AddPlayForm} from '../components/pages/AddPlayForm/AddPlayForm';
+import {AddPlayerForm} from '../components/pages/AddPlayerForm/AddPlayerForm';
 import {SinglePlayView} from '../components/pages/SinglePlayView/SinglePlayView';
+
 
 
 
@@ -29,9 +31,9 @@ class App extends React.Component {
         <Route path="/huddle" exact component={Huddle}/>
         <Route path="/playbook" exact component={Playbook}/>
         <Route path="/playbook/new" exact component={AddPlayForm}/>
-        {/* <Route path="/roster/new" exact component={AddPlayerForm}/> */}
        <Route path="/playbook/:id" exact component={SinglePlayView}/>
       <Route path="/roster" exact component={Roster}/>
+      <Route path="/roster/new" exact component={AddPlayerForm}/>
         </Switch>
       </Router>
     </div>
