@@ -10,4 +10,4 @@ const getAllPlayers = () =>  new Promise((resolve, reject) => {
 const addNewPlayer = (newPlayer) => axios.post("https://localhost:44307/api/roster", newPlayer);
 
 
-export  { getAllPlayers, addNewPlayer };
+export default { getAllPlayers, addNewPlayer } ;

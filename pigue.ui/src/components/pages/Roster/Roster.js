@@ -1,6 +1,7 @@
 import React from 'react';
 import {PlayerCard} from '../../shared/PlayerCard/PlayerCard';
-import {getAllPlayers} from '../../../helpers/data/playerData';
+import getAllPlayers from '../../../helpers/data/playerData';
+import playerData from '../../../helpers/data/playerData';
 import { Link } from 'react-router-dom';
 import Drone from '../../video/drone.mp4';
 import './Roster.scss';
@@ -12,10 +13,19 @@ class Roster extends React.Component {
     }
 
 componentDidMount(){
-    getAllPlayers()
+    const { playerId } = this.props.match.params;
+    playerData.getAllPlayers( playerId )
     .then(players => this.setState({players:players}));
 }
 
+ 
+getPlayers = () => {
+    getAllPlayers()
+    .then((players) => {
+      this.setState({players});
+    })
+    .catch((errFromPlayers) => console.error({ errFromPlayers}));
+  }
 
     render() {
         return(
