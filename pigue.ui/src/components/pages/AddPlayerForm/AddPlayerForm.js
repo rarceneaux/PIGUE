@@ -142,15 +142,19 @@ render() {
        </div>
        <div className="form-group">
          <label htmlFor="event-image"> Upload Player Picture</label>
+         {this.state.image && (
+              <img className="uploadedImg" src={this.state.imgUrl} alt="" />
+            )}
          <FileUploader
          accept="image/*"
          name="image"
-         id="imgUrl"
+        //  id="imgUrl"
          storageRef={firebase.storage().ref('images/')}
          onUploadStart ={this.handleUploadStart}
          onUploadSuccess={this.handleUploadSuccess}
+        className="uploadFileArea"
          />
-       </div>
+        </div>
        { playerId
          ? <button className="btn btn-dark" disabled={isUploading} onClick={this.editEventAEvent}>Save</button>
          : <button className="btn btn-primary" disabled={isUploading} onClick={this.savePlayerEvent}>Save</button>
