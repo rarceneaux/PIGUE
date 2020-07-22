@@ -3,8 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MultiSelect from "react-multi-select-component";
 import PropTypes from 'prop-types';
-import {getAllPlays, addNewPlay} from '../../../helpers/data/playData';
-import {getAllPlayers} from '../../../helpers/data/playerData';
+import playerData from '../../../helpers/data/playerData';
 import {getAllFormations} from '../../../helpers/data/formationData'
  
 import './AddPlayForm.scss';
@@ -27,7 +26,7 @@ class AddPlayForm extends React.Component {
       }
     
     getPlayers = () => {
-      getAllPlayers()
+      playerData.getAllPlayers()
       .then((players) => {
         this.setState({players});
       })
