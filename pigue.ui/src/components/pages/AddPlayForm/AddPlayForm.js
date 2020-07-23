@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MultiSelect from "react-multi-select-component";
-import PropTypes from 'prop-types';
 import playerData from '../../../helpers/data/playerData';
 import {getAllFormations} from '../../../helpers/data/formationData'
  
@@ -56,7 +55,6 @@ class AddPlayForm extends React.Component {
         this.setState({ FormationId: e.target.value})
       }
 
-    
       playerChange = (playersFromMultiSelect) => {
         this.setState({ selectedPlayers: playersFromMultiSelect })
       }
@@ -91,7 +89,7 @@ class AddPlayForm extends React.Component {
             type="text"
             className="form-control"
             id="play-name"
-            placeholder="Type Play Name"
+            placeholder="Play Name"
             value={Name}
             onChange={this.nameChange}/>
           </div>
