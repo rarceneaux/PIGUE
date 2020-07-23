@@ -3,8 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 import FileUploader from 'react-firebase-file-uploader';
-import MultiSelect from "react-multi-select-component";
-import PropTypes from 'prop-types';
 import 'firebase/storage';
 import getAllPlayers from '../../../helpers/data/playerData';
 import playerData from '../../../helpers/data/playerData';
@@ -35,18 +33,6 @@ getPlayers = () => {
     .catch((errFromPlayers) => console.error({ errFromPlayers}));
   }
 
-//     componentDidMount() {
-//         this.getPlayers();
-//     }
-
-// getPlayers = () => {
-//     getAllPlayers()
-//     .then((players) => {
-//       this.setState({players});
-//     })
-//     .catch((errFromPlayers) => console.error({ errFromPlayers}));
-//   }
-
   firstNameChange = (e) => {
     e.preventDefault();
     this.setState({ FirstName: e.target.value });
@@ -62,7 +48,6 @@ getPlayers = () => {
     this.setState({ Position: e.target.value})
   }
 
-    
   imgChange = (e) => {
     e.preventDefault();
     this.setState({ Img: e.target.value})
