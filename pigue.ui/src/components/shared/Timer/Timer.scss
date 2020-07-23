@@ -1,0 +1,22 @@
+.playclock{
+    // background-color: #0011ff;
+    background-color: #ee830a;
+    height: 100px;
+    color:#0011ff;
+    // color:#ee830a;
+    // border: solid thick;
+    border-radius: 20px;
+    width: 250px;
+    margin: 5px;
+}
+
+.penalty{
+    background-color: black;
+    color: white;
+}
+
+.Timer{
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+}

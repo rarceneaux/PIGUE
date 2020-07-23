@@ -41,8 +41,9 @@ componentDidMount() {
             <div className="PlayBackGround">
               <h2 className="play1">{play.playName}</h2>
               <h3 className="play1">{play.formationName}</h3>
-            <Link className="btn btn-primary btn-lg" to={'/huddle'}>Timeout</Link>   
+            <Link className="btn btn-primary btn-lg" to={'/huddle'}>Run Play</Link>
             <Link className="btn btn-dark btn-lg" to={'/playbook'}>Audible</Link> 
+            <Link className="btn btn-primary btn-lg" to={'/huddle'}>Timeout</Link>   
             </div>  
               <div className="daPlay">
               {/* <img className="formations" src={play.formationimg}  alt="..."/> */}

@@ -47,7 +47,7 @@ getPlayers = () => {
 <Link className="btn btn-primary btn-lg" to={'/roster/new'}>Add Player</Link>  
 </div>
             {/* </div> */}
-            {this.state.players.map((player) => <PlayerCard key={player.id} player={player}/>)}
+            {this.state.players.map((player) => <PlayerCard key={player.id} player={player} />)}
             </div>
         )
     }
