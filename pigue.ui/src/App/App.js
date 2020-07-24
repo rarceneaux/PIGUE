@@ -4,6 +4,7 @@ import firebase from 'firebase/app';
 import firebaseConnection from '../helpers/data/connections';
 import {Huddle} from '../components/pages/Huddle/Huddle';
 import {Playbook} from '../components/pages/Playbook/Playbook';
+import {Formation} from '../components/pages/Formation/Formation';
 import {Roster} from '../components/pages/Roster/Roster';
 import {Navbar} from '../components/shared/Navbar/Navbar';
 import {Timer} from '../components/shared/Timer/Timer';
@@ -29,6 +30,7 @@ class App extends React.Component {
         <Route path="/playbook/:id" exact component={SinglePlayView}/>
         <Route path="/roster" exact component={Roster}/>
         <Route path="/roster/new" exact component={AddPlayerForm}/>
+        <Route path="/formations" exact component={Formation}/>
         </Switch>
       </Router>
     </div>

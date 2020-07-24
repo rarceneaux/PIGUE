@@ -12,6 +12,7 @@ const addNewPlay = (newPlay) =>
     console.log(newPlay);
 axios.post("https://localhost:44307/api/playbook", newPlay);
 }
+
 const getPlayById = (playId) => axios.get("https://localhost:44307/api/playbook/" + playId);
 
 

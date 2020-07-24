@@ -4,10 +4,10 @@ height:425px;
 margin: 25px;
 // background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Gag+2.jpg');
 // background-size: cover;
-
-color:#0011ff;
+color:white;
+// color:#0011ff;
 background-color: black;
-text-shadow: 2px 2px 4px #ee830a;
+// text-shadow: 2px 2px 4px #0011ff;
 
 border-radius: 25px;
 // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
@@ -18,8 +18,12 @@ border-radius: 25px;
 }
 
 .btn-dark{
-    color:#0011ff;
-    background-color:#ee830a;
+    color:white;
+    // background-color:#0011ff;
+}
+
+.outline{
+    color:black;
 }
 
 .card-img-top{

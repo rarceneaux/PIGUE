@@ -1,11 +1,15 @@
-.Roster{
+
+.daPlayas{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
+    margin: 25px;
 }
 
 .add-player{
     display: flex;
     justify-content: center;
+    background-color: BLACK;
+    color: white;
 }

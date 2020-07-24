@@ -2,6 +2,7 @@ import React  from 'react';
 import {FormationCard} from '../../shared/FormationCard/FormationCard';
 import {getAllFormations}  from '../../../helpers/data/formationData';
 
+import './Formation.scss';
 
 class Formation extends React.Component{
     state = {

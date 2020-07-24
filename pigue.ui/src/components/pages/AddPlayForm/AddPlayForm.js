@@ -90,8 +90,10 @@ class AddPlayForm extends React.Component {
             className="form-control"
             id="play-name"
             placeholder="Play Name"
+            required
             value={Name}
-            onChange={this.nameChange}/>
+            onChange={this.nameChange}
+            />
           </div>
           <div className="input-group mb-3">
             <label htmlFor="play-type"></label>

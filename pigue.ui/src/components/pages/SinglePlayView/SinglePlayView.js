@@ -1,28 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import playShape from '../../../helpers/propz/playShape';
-import Proptypes from 'prop-types';
 import {getPlayById} from '../../../helpers/data/playData';
+import {getFormationById} from '../../../helpers/data/formationData';
 import {PlayerCard} from '../../shared/PlayerCard/PlayerCard';
 import SinglePlay from '../../video/SinglePlayView.mp4';
 import './SinglePlayView.scss';
 
-
 class SinglePlayView extends React.Component {
   state = {
     play:{},
+    formation:{},
   }
 
 componentDidMount() {
  const id = this.props.match.params.id;
+  getFormationById(id)
+  .then(formation => this.setState({formation:formation.data}));
   getPlayById(id)
   .then(play => this.setState({play:play.data}));
 }
 
-
     render() {
-        const { play } = this.state;
-        console.log(play)
+        const { play, formation } = this.state;
+        console.log(play, formation)
         if(play.players){
           return (
             <div className="SinglePlayView">
@@ -39,15 +39,15 @@ componentDidMount() {
     <source src={SinglePlay} type="video/mp4"/>
 </video>
             <div className="PlayBackGround">
-              <h2 className="play1">{play.playName}</h2>
-              <h3 className="play1">{play.formationName}</h3>
-            <Link className="btn btn-primary btn-lg" to={'/huddle'}>Run Play</Link>
-            <Link className="btn btn-dark btn-lg" to={'/playbook'}>Audible</Link> 
-            <Link className="btn btn-primary btn-lg" to={'/huddle'}>Timeout</Link>   
+              <h1 className="play1">Play: {play.playName}</h1>
+              <h2 className="play1">Formation: {play.formationName}</h2>
+            <Link className="btn btn-primary btn-lg btn-outline-dark" to={'/huddle'}>Run Play</Link>
+            <Link className="btn btn-primary btn-lg btn-outline-dark" to={'/playbook'}>Audible</Link> 
+            <Link className="btn btn-primary btn-lg btn-outline-dark" to={'/huddle'}>Timeout</Link>   
             </div>  
               <div className="daPlay">
-              {/* <img className="formations" src={play.formationimg}  alt="..."/> */}
-            {play.players.map((p) => <PlayerCard key={p.id} player={p} play={play} />)}
+              {/* <img className="" src={formation.formationImg}  alt="..."/> */}
+            {play.players.map((p) => <PlayerCard key={p.id} player={p} play={play}/>)}
         </div>
       </div>);
         }

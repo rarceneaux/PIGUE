@@ -7,4 +7,7 @@ const getAllFormations = () =>  new Promise((resolve, reject) => {
     });
 
 
-export { getAllFormations };
+const getFormationById = (formationId) => axios.get("https://localhost:44307/api/formations/" + formationId);
+
+
+export { getAllFormations, getFormationById };
