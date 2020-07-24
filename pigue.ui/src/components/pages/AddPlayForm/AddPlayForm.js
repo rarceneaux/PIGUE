@@ -90,8 +90,10 @@ class AddPlayForm extends React.Component {
             className="form-control"
             id="play-name"
             placeholder="Play Name"
+            required
             value={Name}
-            onChange={this.nameChange}/>
+            onChange={this.nameChange}
+            />
           </div>
           <div className="input-group mb-3">
             <label htmlFor="play-type"></label>
@@ -133,8 +135,8 @@ class AddPlayForm extends React.Component {
           <br></br>
           <br></br>
           <br></br>
-          <button className="btn btn-dark btn-lg saveplay" onClick={this.savePlayAEvent}>Save Play</button>
-          <Link className="btn btn-dark btn-lg cancel" to={'/huddle'}>Cancel</Link>
+          <button className="btn btn-dark btn-lg saveplay" onClick={this.savePlayAEvent}>SAVE</button>
+          <Link className="btn btn-dark btn-lg cancel" to={'/huddle'}>CANCEL</Link>
          </form>
          </div>
          );

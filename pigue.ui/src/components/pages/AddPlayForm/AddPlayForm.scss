@@ -1,9 +1,9 @@
 .play-details{
   height: 450px;
-  width: 550px;
-  border-radius: 25px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
-  padding: 40px 0;
+  width: 450px;
+  // border-radius: 25px;
+  // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+  // padding: 40px 0;
   // background-color: red;
 // background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Wall+Poster+4.jpg');
 background-repeat: repeat;
@@ -17,9 +17,9 @@ text-align: center;
 .PlayForm{
 display: flex;
 justify-content: center;
-padding:65px;
-height: 100vh;
-// background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/648f10ecf0160727277ac83e3c40826f.jpg');
+// padding:65px;
+height: 105vh;
+background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/648f10ecf0160727277ac83e3c40826f.jpg');
 background-repeat: no-repeat repeat;
 background-size: cover;
 background-attachment: fixed;
@@ -38,6 +38,7 @@ background-attachment: fixed;
 .attheline{
   color:black;
   text-align: center;
+  margin: 15px;
 }
 
 .saveplay,.cancel{

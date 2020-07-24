@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 import FileUploader from 'react-firebase-file-uploader';
+import MultiSelect from "react-multi-select-component";
 import 'firebase/storage';
 import getAllPlayers from '../../../helpers/data/playerData';
 import playerData from '../../../helpers/data/playerData';
@@ -93,7 +94,7 @@ render() {
       <div className="PlayerForm">
          <form className="player-details">
        <div className="form-group">
-         <label htmlFor="player-FirstName"><h3>First Name</h3></label>
+         <label htmlFor="player-FirstName"><h3 className="FN">First Name</h3></label>
          <input
          type="text"
          className="form-control"
@@ -104,7 +105,7 @@ render() {
          />
        </div>
        <div className="form-group">
-         <label htmlFor="player-LastName"><h3>Last Name</h3></label>
+         <label htmlFor="player-LastName"><h3 className="FN">Last Name</h3></label>
          <input
          type="text"
          className="form-control"
@@ -114,17 +115,22 @@ render() {
          onChange={this.lastNameChange}
          />
        </div>
-       <div className="form-group">
-         <label htmlFor="player-position"><h3>Position</h3></label>
-         <input
-         type="text"
-         className="form-control"
-         id="Position"
-         placeholder=""
-         value={Position}
-         onChange={this.positionChange}
-         />
-       </div>
+       <div className="input-group mb-3">
+            <label htmlFor="play-type"></label>
+            <select
+            type="text"
+            className="form-control"
+            id="Type"
+            value={Position}
+            onChange={this.positionChange}>
+            <option defaultValue>Choose Position...</option>
+            <option>QB </option>
+            <option>RB</option>
+            <option>WR</option>
+            <option>TE</option>
+            <option>FB</option>
+           </select>
+          </div>
        <div className="form-group">
          <label htmlFor="event-image"> Upload Player Picture</label>
          {this.state.image && (
@@ -141,10 +147,10 @@ render() {
          />
         </div>
        { playerId
-         ? <button className="btn btn-dark" disabled={isUploading} onClick={this.editEventAEvent}>Save</button>
-         : <button className="btn btn-primary" disabled={isUploading} onClick={this.savePlayerEvent}>Save</button>
+         ? <button className="btn btn-dark btn-lg saveplay" disabled={isUploading} onClick={this.editEventAEvent}>Save</button>
+         : <button className="btn btn-dark btn-lg saveplay" disabled={isUploading} onClick={this.savePlayerEvent}>SAVE</button>
        }
-       <Link className="btn btn-dark primar" to={'/roster'}>Cancel</Link>
+       <Link className="btn btn-dark btn-lg cancel" to={'/roster'}>CANCEL</Link>
       </form>
       </div>
   );

@@ -2,13 +2,13 @@
     width: 350px;
     height: 550px;
     margin: 25px;
-    // background-color: lightgray;
-    color: #ee830a;
-    background-color:#0011ff;
+    background-color: black;
+    color: white;
+    // background-color:#0011ff;
     border-radius: 25px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.6);
     transition: 0.4s;
-    border: solid #0011ff;
+    // border: solid #0011ff;
     // display:flex;
     // flex-direction: row;
     // flex-wrap: wrap;
@@ -16,9 +16,10 @@
     }
 
     .topps{
-        width: 250px;
+        width: 275px;
         height: 300px;
-        border-radius: 25px;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+        border-radius: 275px;
+        box-shadow: 4px 4px 8px 0 rgba(255, 255, 255, 0);
         margin: 15px;
+        border: solid white;
       }

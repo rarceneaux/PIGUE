@@ -44,12 +44,12 @@ getPlayers = () => {
     <source src={Drone} type="video/mp4"/>
 </video>
 <div className="add-player">
-<Link className="btn btn-primary btn-lg" to={'/roster/new'}>Add Player</Link>  
+<Link className="btn btn-primary btn-lg btn-outline-dark" to={'/roster/new'}>Add Player</Link>  
 </div>
-            {/* </div> */}
-            {this.state.players.map((player) => <PlayerCard key={player.id} player={player}/>)}
+            <div className="daPlayas">
+            {this.state.players.map((player) => <PlayerCard key={player.id} player={player} />)}
             </div>
-        )
+            </div>);
     }
 
 }
