@@ -103,6 +103,10 @@ insert into Formations(Name,FormationImg)
 output inserted.*
 values('Trips Right','https://youth-football-plays-and-formations.com/wp-content/uploads/2013/05/trips-right-formation.jpg')
 
+insert into Formations(Name,FormationImg)
+output inserted.*
+values('Trips Left','https://firebasestorage.googleapis.com/v0/b/pigue-8bf57.appspot.com/o/TripsLeft.jpg?alt=media&token=763a3140-b101-4931-b79f-9cdd3c9fc10d')
+
 
 insert into Formations(Name,FormationImg)
 output inserted.*
@@ -160,6 +164,8 @@ delete from Plays where Id = 15
 
 select* from Players
 
+select* from formations
+
 create table PlayPlayers (
 Id int not null Identity(1,1) Primary Key,
 PlayId int not null,
@@ -168,6 +174,10 @@ FOREIGN KEY (PlayerId) REFERENCES Players(Id),
 FOREIGN KEY (PlayId) REFERENCES Plays(Id)
 )
 
+select Plays.Name as Name, Formations.Name as FormationName, Formations.FormationImg as FormationIcon
+                         from Plays
+                            join Formations on Plays.FormationId = Formations.Id
+                            where Plays.Id = 4;
 
 --Add Players to A PLAY
 
@@ -347,7 +357,7 @@ WHERE Plays.Id = 6
 
 
 select* 
-From Players
+From Plays
 
 update Players
 Set img = 'https://wpcdn.us-east-1.vip.tn-cloud.net/www.abc6.com/content/uploads/2020/03/BRADY-2-BUCS.jpg'
@@ -355,9 +365,9 @@ where Id = 2;
 	select*
 	from Plays
 
-update Players
-set Img = 'https://firebasestorage.googleapis.com/v0/b/pigue-8bf57.appspot.com/o/images%2FBRADY-2-BUCS.jpg?alt=media&token=0cb13fdd-e2c1-4573-a5cd-08c9b5b88d65'
-where Id = 15
+update Formations
+set FormationImg = 'https://firebasestorage.googleapis.com/v0/b/pigue-8bf57.appspot.com/o/Left.jpg?alt=media&token=d7af312c-8095-4388-a4bd-eac5b335b7c0'
+where Id = 2
 
 
 	select*
