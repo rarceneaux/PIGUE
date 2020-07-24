@@ -20,5 +20,20 @@ namespace PIGUE.DataAccess
                 return db.Query<Formations>("select * from Formations");
             }
         }
+        public Formations GetFormationById(int id)
+        {
+            var formation = new Formations();
+            var sql = @"select *
+                         from Formations
+                            where Id = @id";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var parameters = new { Id = id };
+                formation = db.QueryFirstOrDefault<Formations>(sql, parameters);
+            }
+                return formation;
+           
+        }
     }
 }

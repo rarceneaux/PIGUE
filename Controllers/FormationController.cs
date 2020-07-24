@@ -24,5 +24,12 @@ namespace PIGUE.Controllers
             var allFormations = _formationRepository.GetAllFormations();
             return Ok(allFormations);
         }
+        [HttpGet("{formationId}")]
+        public IActionResult GetFormationById(int formationId)
+        {
+            var formation = _formationRepository.GetFormationById(formationId);
+            if (formation == null) return NotFound("Illegal Formation On The Offense.");
+            return Ok(formation);
+        }
     }
 }

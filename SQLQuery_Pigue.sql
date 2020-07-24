@@ -52,7 +52,12 @@ values('10 QB Sneak','Run','Power-I Stovepipe')
 
 --GET ALL PLAYS
 select* 
-from Plays
+from Players
+
+select* 
+from Formations
+
+delete from Players where Id = 13
 
 select
 	p.Id,
@@ -351,8 +356,8 @@ where Id = 2;
 	from Plays
 
 update Players
-set Position = 'QB'
-where Id = 3
+set Img = 'https://firebasestorage.googleapis.com/v0/b/pigue-8bf57.appspot.com/o/images%2FBRADY-2-BUCS.jpg?alt=media&token=0cb13fdd-e2c1-4573-a5cd-08c9b5b88d65'
+where Id = 15
 
 
 	select*
