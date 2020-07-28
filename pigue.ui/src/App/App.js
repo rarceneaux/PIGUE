@@ -1,6 +1,5 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import firebase from 'firebase/app';
 import firebaseConnection from '../helpers/data/connections';
 import {Huddle} from '../components/pages/Huddle/Huddle';
 import {Playbook} from '../components/pages/Playbook/Playbook';
@@ -12,6 +11,7 @@ import {Home} from '../components/pages/Home/Home';
 import {AddPlayForm} from '../components/pages/AddPlayForm/AddPlayForm';
 import {AddPlayerForm} from '../components/pages/AddPlayerForm/AddPlayerForm';
 import {SinglePlayView} from '../components/pages/SinglePlayView/SinglePlayView';
+
 import './App.scss';
 
 firebaseConnection();

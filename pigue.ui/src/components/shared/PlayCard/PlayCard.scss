@@ -1,31 +1,25 @@
-.PlayCard-jumbotron{
-width: 400px;
-height:425px;
-margin: 25px;
-// background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Gag+2.jpg');
-// background-size: cover;
-color:white;
-// color:#0011ff;
-background-color: black;
-// text-shadow: 2px 2px 4px #0011ff;
-
-border-radius: 25px;
-// box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
-// transition: 0.4s;
-// // background-color: rgb(243, 155, 12);
-// background-color:white;
-// // opacity: 85%;
-}
-
-.btn-dark{
+.PlayCard-jumbotron {
+    width: 400px;
+    height: 425px;
+    margin: 25px;
     color:white;
-    // background-color:#0011ff;
+    background-color: black;
+    border-radius: 25px;
 }
 
-.outline{
+.btn-dark {
+    color:white;
+    background-color:#0011ff;
+}
+
+.btn-dark :hover {
+    background-color: red;
+}
+
+.outline {
     color:black;
 }
 
-.card-img-top{
- width: 250px;
+.card-img-top {
+    width: 250px;
 }

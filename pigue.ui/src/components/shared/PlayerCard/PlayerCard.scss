@@ -1,25 +1,19 @@
-.PlayerCard{
-    width: 350px;
-    height: 550px;
-    margin: 25px;
-    background-color: black;
-    color: white;
-    // background-color:#0011ff;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.6);
-    transition: 0.4s;
-    // border: solid #0011ff;
-    // display:flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // align-items: flex-start;
-    }
+.PlayerCard {
+  width: 350px;
+  height: 550px;
+  margin: 25px;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.6);
+  transition: 0.4s;
+}
 
-    .topps{
-        width: 275px;
-        height: 300px;
-        border-radius: 275px;
-        box-shadow: 4px 4px 8px 0 rgba(255, 255, 255, 0);
-        margin: 15px;
-        border: solid white;
-      }
+.topps {
+  width: 275px;
+  height: 300px;
+  border-radius: 275px;
+  box-shadow: 4px 4px 8px 0 rgba(255, 255, 255, 0);
+  margin: 15px;
+  border: solid white;
+}

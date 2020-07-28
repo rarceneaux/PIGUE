@@ -3,7 +3,7 @@
     height: 200px;
     margin-left: 40px;
     border-radius: 97px;
-    border: solid thick white;
+    border: solid thick red;
   }
   
   .uploadFileArea {
@@ -12,7 +12,7 @@
     border-radius: 50px;
   }
 
-  .PlayerForm{
+  .PlayerForm {
     display: flex;
     justify-content: center;
     padding:65px;
@@ -20,7 +20,6 @@
     text-align: center;
     display: flex;
     justify-content: center;
-    // padding:65px;
     height: 105vh;
     background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/648f10ecf0160727277ac83e3c40826f.jpg');
     background-repeat: no-repeat repeat;
@@ -28,14 +27,14 @@
     background-attachment: fixed;
 }
 
-label{
+label {
 color: red;
 }
  
-.FN{
+.FN {
   color: black;
 }
 
-#FirstName, #LastName{
+#FirstName, #LastName {
   text-align: center;
 }

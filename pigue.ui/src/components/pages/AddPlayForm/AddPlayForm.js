@@ -7,7 +7,6 @@ import {getAllFormations} from '../../../helpers/data/formationData'
  
 import './AddPlayForm.scss';
 
-
 class AddPlayForm extends React.Component {
     state = {
       players: [],
@@ -78,7 +77,7 @@ class AddPlayForm extends React.Component {
     render() {
         const { Name, Type, FormationId, players, formations } = this.state; 
         const playersForSelect =   players.map((player) => {
-          return { label: player.firstName + " " + player.lastName + " " + player.position, value: player.id }
+          return { label: player.firstName + " " + player.lastName + " " + player.position , value: player.id }
         });
         return (
             <div className="PlayForm">
@@ -100,7 +99,7 @@ class AddPlayForm extends React.Component {
             <select
             type="text"
             className="form-control"
-            id="Type"
+            id="Type"    
             value={Type}
             onChange={this.typeChange}>
             <option defaultValue>Choose Play Type...</option>
@@ -114,13 +113,11 @@ class AddPlayForm extends React.Component {
             type="text"
             className="form-control"
             id="FormationName"
-            type="number"
             value={FormationId}
             onChange={this.formationIdChange} placeholder='Select Formation'>
           {
             formations.map(formation => <option key={formation.id} value={formation.id}>{formation.name}</option> )
           }
-        
            </select>
           </div>
           <div className="">
@@ -129,8 +126,8 @@ class AddPlayForm extends React.Component {
                   options={playersForSelect}
                   value={this.state.selectedPlayers}
                   onChange={this.playerChange}
-                  labelledBy={"Select"}
-            />
+                  labelledBy={"select"}
+                             />
           </div>
           <br></br>
           <br></br>
@@ -143,6 +140,4 @@ class AddPlayForm extends React.Component {
       }
 }
        
-  
-
 export  { AddPlayForm };

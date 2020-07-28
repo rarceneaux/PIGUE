@@ -1,19 +1,18 @@
-.playclock{
-    height: 110px;
+.playclock {
+    height:110px;
     background-color: black;
     color:white;
-    // border: solid white thick;
     width: 250px;
     margin: 5px;
     font-family: 'Tomorrow', sans-serif;
 }
 
-.penalty{
+.penalty {
     background-color: black;
     color: red;
 }
 
-.Timer{
+.Timer {
     display: flex;
     justify-content: center;
 }
