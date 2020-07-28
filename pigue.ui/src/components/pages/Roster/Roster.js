@@ -14,16 +14,16 @@ class Roster extends React.Component {
 
 componentDidMount(){
     const { playerId } = this.props.match.params;
-    playerData.getAllPlayers( playerId )
-    .then(players => this.setState({players:players}));
+        playerData.getAllPlayers( playerId )
+            .then(players => this.setState({players:players}));
 }
 
 getPlayers = () => {
     getAllPlayers()
-    .then((players) => {
-      this.setState({players});
+        .then((players) => {
+            this.setState({players});
     })
-    .catch((errFromPlayers) => console.error({ errFromPlayers}));
+        .catch((errFromPlayers) => console.error({ errFromPlayers}));
   }
 
 render() {
