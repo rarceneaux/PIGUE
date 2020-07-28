@@ -6,7 +6,7 @@ import './Playbook.scss';
 
 class Playbook extends Component {
     state = {
-        plays:[],
+        plays: [],
     }
 
 componentDidMount() {
