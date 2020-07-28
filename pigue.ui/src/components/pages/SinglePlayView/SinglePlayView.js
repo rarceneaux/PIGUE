@@ -9,8 +9,8 @@ import './SinglePlayView.scss';
 
 class SinglePlayView extends React.Component {
   state = {
-    play:{},
-    formation:{},
+    play: {},
+    formation: {},
   }
 
 componentDidMount() {
