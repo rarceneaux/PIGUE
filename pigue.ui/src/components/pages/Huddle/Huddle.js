@@ -13,7 +13,6 @@ class Huddle extends React.Component {
                     <Link className="btn btn-primary btn-lg btn-outline-dark" to={'/playbook'}>Playbook</Link>    
                     <Link className="btn btn-success btn-lg btn-outline-dark" to={'/playbook/new'}>Add Play</Link>    
                     <Link className="btn btn-secondary btn-lg btn-outline-dark" to={'/roster'}>Roster</Link>
-                    <Link className="btn btn-secondary btn-lg btn-outline-dark" to={'/'}>Timeout</Link>    
                 </div>
             </div>
         )

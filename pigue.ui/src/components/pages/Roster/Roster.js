@@ -3,7 +3,7 @@ import {PlayerCard} from '../../shared/PlayerCard/PlayerCard';
 import getAllPlayers from '../../../helpers/data/playerData';
 import playerData from '../../../helpers/data/playerData';
 import { Link } from 'react-router-dom';
-import Drone from '../../video/drone.mp4';
+import Drone from '../../../assets/video/drone.mp4';
 
 import './Roster.scss';
 
