@@ -1,47 +1,39 @@
-.play-details{
+.play-details { 
   height: 450px;
   width: 450px;
-  // border-radius: 25px;
-  // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
-  // padding: 40px 0;
-  // background-color: red;
-// background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/Wall+Poster+4.jpg');
-background-repeat: repeat;
-background-size: cover;
-background-attachment: fixed;
-color:#ee830a;
-// padding-left: 15px;
-text-align: center;
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color:#ee830a;
+  text-align: center;
 }
 
-.PlayForm{
-display: flex;
-justify-content: center;
-// padding:65px;
-height: 105vh;
-background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/648f10ecf0160727277ac83e3c40826f.jpg');
-background-repeat: no-repeat repeat;
-background-size: cover;
-background-attachment: fixed;
-
+.PlayForm {
+  display: flex;
+  justify-content: center;
+  height: 105vh;
+  background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/648f10ecf0160727277ac83e3c40826f.jpg');
+  background-repeat: no-repeat repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.form-control{
-    align-self: center;;
+.form-control {
+  align-self: center;;
 }
 
-#play-name, #play-type, #formation-name{
+#play-name, #play-type, #formation-name {
   color:black;
   text-align: center;
 }
 
-.attheline{
+.attheline {
   color:black;
   text-align: center;
   margin: 15px;
 }
 
-.saveplay,.cancel{
+.saveplay,.cancel {
   background-color: black;
   color:white;
 }

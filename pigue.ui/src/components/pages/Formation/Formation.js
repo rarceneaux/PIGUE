@@ -9,16 +9,13 @@ class Formation extends React.Component{
         formations: [],
     }
 
-
     componentDidMount() {
         getAllFormations()
         .then(formations => this.setState({formations:formations}));
     }
     
-    
-        render() {
-            return(
-                <div className="Formation">
+    render() {
+        return(<div className="Formation">
                     {this.state.formations.map((formation) => <FormationCard key={formation.id} formation={formation}/>)}
                 </div>
             )

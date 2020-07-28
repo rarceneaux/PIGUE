@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 import FileUploader from 'react-firebase-file-uploader';
-import MultiSelect from "react-multi-select-component";
 import 'firebase/storage';
 import getAllPlayers from '../../../helpers/data/playerData';
 import playerData from '../../../helpers/data/playerData';
@@ -86,7 +85,6 @@ render() {
     FirstName,
     LastName,
     Position,
-    Img,
     isUploading,
   } = this.state;
   const { playerId } = this.props.match.params;
@@ -126,9 +124,10 @@ render() {
             <option defaultValue>Choose Position...</option>
             <option>QB </option>
             <option>RB</option>
+            <option>FB</option>
+            <option>WB</option>
             <option>WR</option>
             <option>TE</option>
-            <option>FB</option>
            </select>
           </div>
        <div className="form-group">
@@ -139,7 +138,6 @@ render() {
          <FileUploader
          accept="image/*"
          name="image"
-        //  id="imgUrl"
          storageRef={firebase.storage().ref('images/')}
          onUploadStart ={this.handleUploadStart}
          onUploadSuccess={this.handleUploadSuccess}

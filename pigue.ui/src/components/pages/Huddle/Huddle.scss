@@ -1,4 +1,4 @@
-.Huddle{
+.Huddle {
     display: flex;
     justify-content: center;
     padding:65px;
@@ -10,24 +10,22 @@
     }
 
 
-.btn{
-margin: 10px;
+.btn {
+   margin: 10px;
 }
 
 
-.btn-primary, .btn-success, .btn-secondary{ 
-    // color:#0011ff;
-    // background-color:#ee830a;
+.btn-primary, .btn-success, .btn-secondary { 
     background-color: black;
     color:white;
 }
 
-.gametime{
+.gametime {
     color:#0011ff;
     font-size: xx-large;
     font-weight: bolder;
 }
 
-.btn:hover{
+.btn:hover {
     background-color:#0011ff;
 }
