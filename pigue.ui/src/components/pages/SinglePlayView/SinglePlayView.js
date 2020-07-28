@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {getPlayById} from '../../../helpers/data/playData';
 import {getFormationById} from '../../../helpers/data/formationData';
 import {PlayerCard} from '../../shared/PlayerCard/PlayerCard';
-import SinglePlay from '../../video/SinglePlayView.mp4';
+import SinglePlay from '../../../assets/video/SinglePlayView.mp4';
 
 import './SinglePlayView.scss';
 
@@ -59,4 +59,4 @@ render() {
       }
 }
 
-export {SinglePlayView}
+export {SinglePlayView} ;
