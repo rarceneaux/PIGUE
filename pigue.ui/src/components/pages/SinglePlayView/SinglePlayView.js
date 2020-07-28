@@ -41,9 +41,9 @@ render() {
             <div className="PlayBackGround">
               <h1 className="play1">Play: {play.playName}</h1>
               <h2 className="play1">Formation: {play.formationName}</h2>
-                <Link className="btn btn-primary btn-lg btn-outline-dark" to={'/huddle'}>Run Play</Link>
-                <Link className="btn btn-primary btn-lg btn-outline-dark" to={'/playbook'}>Audible</Link> 
-                <Link className="btn btn-primary btn-lg btn-outline-dark" to={'/huddle'}>Timeout</Link>   
+              <Link className="btn btn-primary btn-lg btn-outline-dark" to={'/huddle'}>Run Play</Link>
+              <Link className="btn btn-primary btn-lg btn-outline-dark" to={'/playbook'}>Audible</Link> 
+              <Link className="btn btn-primary btn-lg btn-outline-dark" to={'/huddle'}>Timeout</Link>   
             </div>  
                 <div className="daPlay">
                       {play.players.map((p) => <PlayerCard key={p.id} player={p} play={play}/>)}
