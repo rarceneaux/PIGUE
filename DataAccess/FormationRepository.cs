@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Dapper;
 using System.Data.SqlClient;
 using PIGUE.Models;
-using System.Data.Common;
 
 namespace PIGUE.DataAccess
 {

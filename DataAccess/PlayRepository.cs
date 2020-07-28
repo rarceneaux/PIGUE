@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Dapper;
 using System.Data.SqlClient;
 using PIGUE.Models;
-using System.Data.Common;
-
 
 namespace PIGUE.DataAccess
 {
@@ -29,6 +24,7 @@ namespace PIGUE.DataAccess
                             on p.FormationId = f.Id");
             }
         }
+
         public Play AddNewPlay(PlayForm play)
         {
             var sql = @"insert into Plays(Name,Type,FormationId)
@@ -50,6 +46,7 @@ namespace PIGUE.DataAccess
                 return result;
             }
         }
+
         public Play GetPlayById(int id)
         {
             var play = new Play();
