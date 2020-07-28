@@ -125,7 +125,7 @@ from PlayPlayers
 
 
 select*
-from Plays
+from Players
 
 select*
 from Formations

@@ -35,9 +35,8 @@ namespace PIGUE
           );
             services.AddTransient<PlayRepository>();
             services.AddTransient<FormationRepository>();
-
-
-      services.AddSingleton<IConfiguration>(Configuration);
+            services.AddTransient<PlayerRepository>();
+            services.AddSingleton<IConfiguration>(Configuration);
 
         }
 

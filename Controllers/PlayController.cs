@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using PIGUE.DataAccess;
 using PIGUE.Models;
 
@@ -37,7 +33,6 @@ namespace PIGUE.Controllers
             {
                 Console.Write(e.Message);
                 return Created("", new object());
-
             }
         }
 
@@ -54,6 +49,5 @@ namespace PIGUE.Controllers
             if (play == null) return NotFound("This Play is not in our playbook coach.");
             return Ok(playviewmodel); 
         }
-
     }
 }
