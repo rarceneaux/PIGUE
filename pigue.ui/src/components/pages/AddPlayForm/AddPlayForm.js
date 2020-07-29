@@ -3,7 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MultiSelect from "react-multi-select-component";
 import playerData from '../../../helpers/data/playerData';
-import {getAllFormations} from '../../../helpers/data/formationData'
+import getAllFormations from '../../../helpers/data/formationData'
+import formationData from '../../../helpers/data/formationData';
  
 import './AddPlayForm.scss';
 
@@ -32,7 +33,7 @@ class AddPlayForm extends React.Component {
     }
 
     getFormations = () => {
-      getAllFormations()
+      formationData.getAllFormations()
       .then((formations) => {
         this.setState({formations});
       })

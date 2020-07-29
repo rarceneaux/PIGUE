@@ -1,7 +1,24 @@
 .Formation {
-    display:flex;
+    // display:flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: center;
+    // background-color: lightgray;
+}
+
+.daFormations {
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
-    background-color: lightgray;
+    flex-wrap: wrap;
+    margin: 25px;
+    background-color: BLACK;
+    color: white;
+}
+
+.add-formation {
+    display: flex;
+    justify-content: center;
+    background-color: BLACK;
+    color: white;
 }

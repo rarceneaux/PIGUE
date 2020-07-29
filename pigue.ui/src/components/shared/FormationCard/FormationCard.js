@@ -1,5 +1,6 @@
 import React from 'react';
-import {getAllFormations} from '../../../helpers/data/formationData';
+import getAllFormations from '../../../helpers/data/formationData';
+import formationData from '../../../helpers/data/formationData';
 
 import './FormationCard.scss';
 
@@ -9,8 +10,20 @@ class FormationCard extends React.Component {
     }
 
 componentDidMount() {
-    getAllFormations()
-      .then(formations => this.setState({formations:formations}));
+    // getAllFormations()
+    //   .then(formations => this.setState({formations:formations}));
+    const { formationId } = this.props;
+formationData.getAllFormations( formationId )
+.then(formations => this.setState({formations:formations}));
+
+    }
+
+    getMyFormations = () => {
+      getAllFormations()
+      .then((formations) => {
+      this.setState({formations});
+      })
+      .catch((errFromPlayers) => console.error({ errFromPlayers}));
     }
 
 render() {

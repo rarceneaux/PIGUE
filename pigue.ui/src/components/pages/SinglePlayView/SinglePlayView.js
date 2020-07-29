@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {getPlayById} from '../../../helpers/data/playData';
-import {getFormationById} from '../../../helpers/data/formationData';
+import formationData from '../../../helpers/data/formationData';
 import {PlayerCard} from '../../shared/PlayerCard/PlayerCard';
 import SinglePlay from '../../../assets/video/SinglePlayView.mp4';
 
@@ -15,7 +15,7 @@ class SinglePlayView extends React.Component {
 
 componentDidMount() {
   const id = this.props.match.params.id;
-    getFormationById(id)
+    formationData.getFormationById(id)
          .then(formation => this.setState({formation:formation.data}));
     getPlayById(id)
           .then(play => this.setState({play:play.data}));

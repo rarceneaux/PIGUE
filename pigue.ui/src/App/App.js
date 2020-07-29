@@ -10,6 +10,8 @@ import {Timer} from '../components/shared/Timer/Timer';
 import {Home} from '../components/pages/Home/Home';
 import {AddPlayForm} from '../components/pages/AddPlayForm/AddPlayForm';
 import {AddPlayerForm} from '../components/pages/AddPlayerForm/AddPlayerForm';
+import {AddFormationForm} from '../components/pages/AddFormationForm/AddFormationForm';
+
 import {SinglePlayView} from '../components/pages/SinglePlayView/SinglePlayView';
 
 import './App.scss';
@@ -31,6 +33,7 @@ class App extends React.Component {
         <Route path="/roster" exact component={Roster}/>
         <Route path="/roster/new" exact component={AddPlayerForm}/>
         <Route path="/formations" exact component={Formation}/>
+        <Route path="/formations/new" exact component={AddFormationForm}/>
         </Switch>
       </Router>
     </div>

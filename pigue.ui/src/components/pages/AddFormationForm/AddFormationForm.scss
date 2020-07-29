@@ -1,0 +1,37 @@
+.uploadedImg {
+    width: 200px;
+    height: 200px;
+    margin-left: 40px;
+    border-radius: 97px;
+    border: solid thick red;
+  }
+  
+  .uploadFileArea {
+    margin-left: 40px;
+    color: red;
+    border-radius: 50px;
+  }
+
+  .FormationForm {
+    display: flex;
+    justify-content: center;
+    padding:65px;
+    height: 100vh;
+    text-align: center;
+    background-repeat: no-repeat repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url('https://reactnativestarter-hosting-mobilehub-132039435.s3.amazonaws.com/648f10ecf0160727277ac83e3c40826f.jpg');
+}
+
+label {
+color: red;
+}
+ 
+.FN {
+  color: black;
+}
+
+#Name {
+  text-align: center;
+}

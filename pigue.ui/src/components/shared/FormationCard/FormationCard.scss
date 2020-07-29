@@ -8,3 +8,11 @@
 .former {
     border : solid white thick;
 }
+
+.FormationCard {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // justify-content: center;
+    // background-color: lightgray;
+}
