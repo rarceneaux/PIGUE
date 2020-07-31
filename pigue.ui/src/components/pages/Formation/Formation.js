@@ -32,10 +32,11 @@ class Formation extends React.Component{
     render() {
         return(<div className="Formation">
                 <div className="add-formation">
-                <Link className="btn btn-primary btn-lg btn-outline-dark" to={'/formations/new'}>Add Formation</Link>  
+                <Link className="btn btn-primary btn-lg btn-outline-dark formz" to={'/formations/new'}>Add Formation</Link>  
                 </div>
-                <div className="daFormations"></div>
+                <div className="daFormations">
                     {this.state.formations.map((formation) => <FormationCard key={formation.id} formation={formation}/>)}
+                    </div>
                 </div>
             );
         }
