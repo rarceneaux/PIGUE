@@ -8,4 +8,7 @@ const getAllFormations = () =>  new Promise((resolve, reject) => {
 
 const getFormationById = (formationId) => axios.get("https://localhost:44307/api/formations/" + formationId);
 
-export { getAllFormations, getFormationById };
+const addNewFormation = (newFormation) => axios.post("https://localhost:44307/api/formations", newFormation);
+
+
+export default { getAllFormations, getFormationById, addNewFormation };
