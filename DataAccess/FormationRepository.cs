@@ -2,6 +2,7 @@
 using Dapper;
 using System.Data.SqlClient;
 using PIGUE.Models;
+using System.Runtime.InteropServices;
 
 namespace PIGUE.DataAccess
 {
@@ -16,6 +17,7 @@ namespace PIGUE.DataAccess
                 return db.Query<Formations>("select * from Formations");
             }
         }
+        //GET FORMATION BY ID
         public Formations GetFormationById(int id)
         {
             var formation = new Formations();
@@ -29,7 +31,19 @@ namespace PIGUE.DataAccess
                 formation = db.QueryFirstOrDefault<Formations>(sql, parameters);
             }
                 return formation;
-           
+        }
+
+        public Formations AddNewFormation(Formations formation)
+        {
+            var sql = @"insert into Formations(Name,FormationImg)
+                            output inserted.*
+                            values(@Name,@FormationImg)";
+            
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var result = db.QueryFirstOrDefault<Formations>(sql, formation);
+                return result;
+            }
         }
     }
 }
