@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MultiSelect from "react-multi-select-component";
 import playerData from '../../../helpers/data/playerData';
-import getAllFormations from '../../../helpers/data/formationData'
 import formationData from '../../../helpers/data/formationData';
  
 import './AddPlayForm.scss';
@@ -65,7 +64,6 @@ class AddPlayForm extends React.Component {
         name: this.state.Name,
         type: this.state.Type,
         formationId: parseInt(this.state.FormationId),
-        // FormationName: this.state.FormationName,
         players: this.state.selectedPlayers,
       };
 
@@ -128,6 +126,7 @@ class AddPlayForm extends React.Component {
                   value={this.state.selectedPlayers}
                   onChange={this.playerChange}
                   labelledBy={"select"}
+                  hasSelectAll={false}
                              />
           </div>
           <br></br>
