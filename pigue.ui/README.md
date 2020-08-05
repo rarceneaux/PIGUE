@@ -23,28 +23,28 @@ Themed after the famous EA Sports Madden football video game, PIGUE was inspired
 # Application Main Component Screenshots
 
 ## HOME 
-![](src\assets\HOME.PNG)
+![](https://raw.githubusercontent.com/rarceneaux/PIGUE/master/pigue.ui/src/assets/HOME.PNG)
 
 ## Huddle
-![](src\assets\HUDDLE.PNG)
+![](https://raw.githubusercontent.com/rarceneaux/PIGUE/master/pigue.ui/src/assets/HUDDLE.PNG)
 
 ## Playbook
-![](src\assets\PLAYBOOK.PNG)
+![](https://raw.githubusercontent.com/rarceneaux/PIGUE/master/pigue.ui/src/assets/PLAYBOOK.PNG)
 
 ## Roster
-![](src\assets\ROSTER.PNG)
+![](https://raw.githubusercontent.com/rarceneaux/PIGUE/master/pigue.ui/src/assets/ROSTER-1.PNG)
 
 ## Formations
-![](src\assets\FORMATIONS.PNG)
+![](https://raw.githubusercontent.com/rarceneaux/PIGUE/master/pigue.ui/src/assets/FORMATIONS.PNG)
 
 ## Single Play View
-![](src\assets\Single Play View.PNG)
+![](https://raw.githubusercontent.com/rarceneaux/PIGUE/master/pigue.ui/src/assets/Single%20Play%20View.PNG)
 
 ## Add New Play Form
-![](src\assets\ADD NEW PLAY FORM.png)
+![](https://raw.githubusercontent.com/rarceneaux/PIGUE/master/pigue.ui/src/assets/ADD%20NEW%20PLAY%20FORM.png)
 
-## Add New Play Form
-![](src\assets\ADD NEW PLAYER FORM.PNG)
+## Add New Player Form
+![](https://raw.githubusercontent.com/rarceneaux/PIGUE/master/pigue.ui/src/assets/ADD%20NEW%20PLAYER%20FORM.PNG)
 
 
 
