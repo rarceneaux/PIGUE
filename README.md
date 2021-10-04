@@ -48,4 +48,4 @@ I dedicate this app to Coach Pigue as he not only changed my life but also saved
 ## Add New Player Form
 ![](https://raw.githubusercontent.com/rarceneaux/PIGUE/master/pigue.ui/src/assets/ADD%20NEW%20PLAYER%20FORM.PNG)
 
-# DEMO VIDEO: www.coachpigue.com
+
